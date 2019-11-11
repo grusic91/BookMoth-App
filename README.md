@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Instaled packages for styles:
+* Bootstrap (CSS framework)
+###  * `npm install bootstrap`
+For proper functionality of bootstrap install also this two packages below
+###  * `npm install jquery`
+###  * `npm install popper.js`
+* SCSS:
+### * `npm install node-sass-chokidar` 
+### * `npm install npm-run-all` (A CLI tool to run multiple npm-scripts in parallel or sequential.)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
