@@ -7,8 +7,18 @@ For proper functionality of bootstrap install also this two packages below
 ###  * `npm install jquery`
 ###  * `npm install popper.js`
 * SCSS:
-### * `npm install node-sass-chokidar` 
+### * `npm install node-sass-chokidar`
 ### * `npm install npm-run-all` (A CLI tool to run multiple npm-scripts in parallel or sequential.)
+
+# Backend
+## Insatled packages for seting Mongo DB
+#### * if you don't have node also install `npm install node`
+#### * `npm install express`
+#### * `npm install mongoose`
+#### * `npm install body-parser`
+#### * `npm install mongoose`
+
+
 
 
 ## Available Scripts

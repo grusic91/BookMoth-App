@@ -1,11 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 const config = require("./config/dev");
 const FakeDb = require("./fake-db");
 const errorHandler = require("./handler/error");
 const Book = require("./models/book");
+const authRoutes = require("./routes/auth");
 const PORT = process.env.PORT || 3005;
+
+
 
 // useful to see the acutal Mongo queries that are being run in terminal
 mongoose.set("debug", true);
@@ -18,6 +22,7 @@ mongoose.connect(config.DB_URI, {
   keepAlive: true, // make sure that connection is stabel
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true
 })
   .then(() => {
     const fakeDb = new FakeDb();
@@ -25,7 +30,9 @@ mongoose.connect(config.DB_URI, {
   });
 
 const app = express();
+app.use(bodyParser.json());
 // Routes come here
+app.use("/api/auth", authRoutes);
 
 app.get("/books", function(req,res) {
   res.json({"success": true});
