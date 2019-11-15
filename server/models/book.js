@@ -10,7 +10,8 @@ const bookSchema = new Schema({
   pages: Number,
   description: {type: String, required: true},
   cratedAt: { type: Date, default: Date.now },
-  image_url: String
+  image_url: String,
+  users: [{ type: Schema.Types.ObjectId, ref: "User"}]
 });
 
 module.exports = mongoose.model("Book", bookSchema);

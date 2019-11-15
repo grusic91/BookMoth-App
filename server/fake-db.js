@@ -1,7 +1,9 @@
 const Book = require("./models/book");
+const User = require("./models/user");
 
 class FakeDb {
   constructor() {
+    //fake books
     this.books = [
       {
         title: "The Gulag Archipelago",
@@ -11,6 +13,15 @@ class FakeDb {
         category: "novel",
         pages: 496,
         description: "The Gulag Archipelago is Solzhenitsyn's masterwork, a vast canvas of camps, prisons, transit centres and secret police, of informers and spies and interrogators and also of heroism, a Stalinist anti-world at the heart of the Soviet Union where the key to survival lay not in hope but in despair.",
+      },
+      {
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        language: "Englisch",
+        publisher: "Houghton Mifflin Harcourt (September 18, 2012)",
+        category: "novel",
+        pages: 300,
+        description: "A glorious account of a magnificent adventure, filled with suspense and seasoned with a quiet humor that is irresistible . . . All those, young or old, who love a fine adventurous tale, beautifully told, will take The Hobbit to their hearts",
       },
       {
         title: "Sapiens: A Brief History of Humankind ",
@@ -30,24 +41,39 @@ class FakeDb {
         pages: 448,
         description: "One of the greatest stories ever told, Iliad has survived for thousands of years because of its insightful portrayal of man and its epic story of war, duty, honor, and revenge.",
       }
-    ]
+    ];
+    //fake users
+    this.users = [{
+      username: "Testuser",
+      email: "test@gm.com",
+      password: "testtest"
+    }];
   }
 
+
+
   async cleanDB() {
+    await User.remove({})
     await Book.remove({})
   }
 
-  pushBooksToDb() {
+  pushDataToDb() {
+    const user = new User(this.users[0]);
+
     this.books.forEach((book) => {
       const newBook = new Book(book);
+      newBook.users = user;
 
+      user.books.push(newBook);
       newBook.save();
-    })
+    });
+
+    user.save();
   }
 
-  seedDb() {
-    this.cleanDB();
-    this.pushBooksToDb();
+  async seedDb() {
+    await this.cleanDB();
+    this.pushDataToDb();
   }
 }
 
