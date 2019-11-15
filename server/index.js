@@ -7,6 +7,7 @@ const FakeDb = require("./fake-db");
 const errorHandler = require("./handler/error");
 const Book = require("./models/book");
 const authRoutes = require("./routes/auth");
+const booksRoutes = require("./routes/books");
 const PORT = process.env.PORT || 3005;
 
 
@@ -26,17 +27,16 @@ mongoose.connect(config.DB_URI, {
 })
   .then(() => {
     const fakeDb = new FakeDb();
-    //fakeDb.seedDb();
+    // fakeDb.seedDb();
   });
 
 const app = express();
 app.use(bodyParser.json());
+
 // Routes come here
 app.use("/api/auth", authRoutes);
+app.use("/api", booksRoutes);
 
-app.get("/books", function(req,res) {
-  res.json({"success": true});
-});
 
 /*Error handler if the route cann not be reached*/
 app.use(function(req, res, next) {
