@@ -6,11 +6,11 @@ const config = require("./config/dev");
 const FakeDb = require("./fake-db");
 const errorHandler = require("./handler/error");
 const Book = require("./models/book");
+
 const authRoutes = require("./routes/auth");
 const booksRoutes = require("./routes/books");
+
 const PORT = process.env.PORT || 3005;
-
-
 
 // useful to see the acutal Mongo queries that are being run in terminal
 mongoose.set("debug", true);
@@ -36,7 +36,6 @@ app.use(bodyParser.json());
 // Routes come here
 app.use("/api/auth", authRoutes);
 app.use("/api", booksRoutes);
-
 
 /*Error handler if the route cann not be reached*/
 app.use(function(req, res, next) {
