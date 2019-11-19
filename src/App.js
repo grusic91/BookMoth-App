@@ -1,17 +1,26 @@
 import React from 'react';
+import * as redux from 'redux';
+import { Provider } from 'react-redux';
+import { configureStore } from './store';
+import { BrowserRouter as Router} from 'react-router-dom'
 import './App.css';
 
 // components
-import { Header } from './components/shared/Header';
+import Header from './containers/shared/Header';
+import BooksComponent from './containers/BooksComponent';
+
+const store = configureStore();
 
 function App() {
   return (
-    <div className="App">
-      <Header /> 
-      <p>THIS IS BOOKMOTH APP</p>
-
-     <button type="button" className="btn btn-danger">Danger</button>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App onboarding">
+          <Header />
+          <BooksComponent />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

@@ -19,6 +19,22 @@ For proper functionality of bootstrap install also this two packages below
 #### * `npm install mongoose`
 
 
+# Frontend
+## Install packages
+#### * `npm install axios` for ajax requests
+#### * `npm install redux`
+#### * `npm install redux-thunk`
+#### * `npm install react-redux`
+#### * `npm install react-router-dom`
+
+
+## Folder structure in /src
+
+#### /componetns - folder for react components that are not directly connected to redux state
+#### /containers - folder for react components that are directly connected to redux state
+#### /hocs - higher order components
+#### /services - logic that relates to communicate with API
+#### /store - redux related logic
 
 
 ## Available Scripts
