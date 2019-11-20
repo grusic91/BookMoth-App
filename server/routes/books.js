@@ -5,7 +5,7 @@ const Book = require("../models/book");
 
 /*Get all Books from DB */
 // route: /api/books
-router.get("/books", authMiddleware, async function(req, res, next) {
+router.get("/books", async function(req, res, next) {
   try {
     // get all books from the server
     let books = await Book.find({});

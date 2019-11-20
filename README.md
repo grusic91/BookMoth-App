@@ -26,6 +26,7 @@ For proper functionality of bootstrap install also this two packages below
 #### * `npm install redux-thunk`
 #### * `npm install react-redux`
 #### * `npm install react-router-dom`
+#### * `npm install http-proxy-middleware` fro cros origin access
 
 
 ## Folder structure in /src

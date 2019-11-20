@@ -1,16 +1,16 @@
-import { GET_ALL_BOOKS } from "../actionTypes";
+import { FETCH_BOOKS_SUCCESS } from "../actionTypes";
 
-const initialState = {
-  books: []
+const INITIAL_STATE = {
+  data: []
 }
 
-export default (state = initialState, action) {
+export const bookReducer = (state = INITIAL_STATE, action) => {
+  // debugger
   switch (action.type) {
-    case GET_ALL_BOOKS:
-    
-
-      break;
+    case FETCH_BOOKS_SUCCESS:
+      return {...state, data: action.books}
     default:
+      return state;
 
   }
 }
