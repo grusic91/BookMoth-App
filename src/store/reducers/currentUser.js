@@ -2,7 +2,7 @@ import { SET_CURRENT_USER } from "../actionTypes";
 
 const DEFAULT_STATE = {
   isAuthenticated: false,
-  user: {}, // when isAuthenticated true it will fill all the user info
+  user: {}, // when isAuthenticated true it will fill with user data
 }
 
 export default (state = DEFAULT_STATE, action) => {

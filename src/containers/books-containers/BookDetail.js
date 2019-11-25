@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 
 class BookDetail extends Component {
-  constructor() {
-    super()
-  }
-
+  
   render() {
     return (
       <div className="card mb-3">

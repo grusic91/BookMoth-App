@@ -9,16 +9,15 @@ const fetchBooksSuccess = books => {
     books
   }
 }
+
 export const fetchBooks = () => {
   // debugger
-
 // dispatch function send data to the store
   return dispatch => {
     // proxy to http://localhost:3005/api/books
     axios.get(`http://localhost:3000/api/books`)
       .then(books => {
         // debugger
-
         /* DO THIS IN THE FUTURE Sort data that we want to use for users without authentication*/
           //if user is not authenticated get
           let booksNoAuth = books.data.map(book => {
@@ -39,4 +38,20 @@ export const fetchBooks = () => {
 
       })
   }
+}
+
+
+// REGISTER USER
+export const register = (userData) => {
+  return axios.post(`http://localhost:3000/api/auth/register`, {...userData})
+    .then(
+      (res) => {
+        debugger
+        return res.data;
+      },
+      (err) => {
+        debugger
+        return Promise.reject(err.response.data.error.message)
+      }
+    )
 }

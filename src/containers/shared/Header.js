@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 class Header extends Component {
-  constructor() {
-    super()
-
-  }
 
   render() {
     return (
@@ -28,13 +24,13 @@ class Header extends Component {
                 <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">Books</Link>
+                <Link className="nav-link" to="/books">Books</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">signUp</Link>
+                <Link className="nav-link" to="/register">REGISTER</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">logIn</Link>
+                <Link className="nav-link" to="/login">LOGIN</Link>
               </li>
             </ul>
           </div>
@@ -45,6 +41,7 @@ class Header extends Component {
 }
 
 function mapStateToProps(state) {
+  // debugger
   return {
     currentUser: state.currentUser
   };
