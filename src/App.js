@@ -1,27 +1,44 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { configureStore } from './store';
 import { BrowserRouter as Router} from 'react-router-dom'
+import { configureStore } from 'store';
+import * as actions from "store/actions";
+
 import './App.css';
 
 // components
-import Header from './containers/shared/Header';
-import Main from './containers/Main';
+import Header from 'components/shared/Header';
+import Main from 'containers/Main';
 
 
 const store = configureStore();
 
-const App  = () => {
-  return (
-    <Provider store={store}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Main />
-        </div>
-      </Router>
-    </Provider>
-  );
+class App extends React.Component {
+
+  componentDidMount() {
+    this.checkAuthState();
+  }
+
+  checkAuthState() {
+    store.dispatch(actions.checkAuthState());
+  }
+
+  logoutUser() {
+    store.dispatch(actions.logout());
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Header logoutUser={this.logoutUser} />
+            <Main />
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;

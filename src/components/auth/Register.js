@@ -1,6 +1,6 @@
 import React from "react";
 import RegisterForm from "./RegisterForm";
-import * as actions from "../../store/actions";
+import * as actions from "store/actions";
 import { Redirect } from "react-router-dom";
 
 class Register extends React.Component {
@@ -39,7 +39,6 @@ class Register extends React.Component {
       <div>
         <RegisterForm submitCb={this.registerUser} errors={errors} />
       </div>
-
     )
   }
 }

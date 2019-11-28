@@ -11,6 +11,5 @@ export const bookReducer = (state = INITIAL_STATE, action) => {
       return {...state, data: action.books}
     default:
       return state;
-
   }
 }

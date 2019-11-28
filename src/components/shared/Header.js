@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 class Header extends Component {
 
   render() {
+    console.log(this.props);
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
         <div className="container-fluid">
@@ -32,6 +33,9 @@ class Header extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/login">LOGIN</Link>
               </li>
+              <li className="nav-item">
+                <p className="nav-link" onClick={this.props.logoutUser}>LOGOUT</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,7 +45,6 @@ class Header extends Component {
 }
 
 function mapStateToProps(state) {
-  // debugger
   return {
     currentUser: state.currentUser
   };
