@@ -12,13 +12,10 @@ class BookList extends React.Component {
   };
 
   componentDidMount() {
-    // debugger
-    this.props.dispatch(actions.fetchBooks())
+    this.props.dispatch(actions.fetchBooks());
   }
 
-
   BookCard() {
-
     return this.props.books.map((book) => {
       return (
         <BookCard key={book.id} book={book} />
@@ -28,10 +25,8 @@ class BookList extends React.Component {
 
 
   render() {
-
-    console.log(this.props.books);
     return (
-      <div className="row">
+      <div className="row books-list">
         { this.BookCard() }
       </div>
     )
@@ -39,7 +34,6 @@ class BookList extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // debugger
   return {
     books: state.books.data
   }

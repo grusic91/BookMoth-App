@@ -36,8 +36,13 @@ class Register extends React.Component {
     }
 
     return(
-      <div>
+      <div className="register-page">
         <RegisterForm submitCb={this.registerUser} errors={errors} />
+        <div className="registerImage">
+          <img
+            width="200px" src={process.env.PUBLIC_URL + '/img/book-moth-register.jpg'}
+            alt="Photo by Emily Rudolph on Unsplash" />
+        </div>
       </div>
     )
   }

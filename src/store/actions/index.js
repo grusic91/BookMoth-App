@@ -1,9 +1,12 @@
 import axios from "axios";
-import AuthService from "../services/auth-service";
+import authService from "../services/auth-service";
+import axiosService from "../services/axios-service";
 import { FETCH_BOOKS_SUCCESS } from "../actionTypes";
 import { LOGIN_SUCCESS } from "../actionTypes";
 import { LOGIN_FAILURE } from "../actionTypes";
 import { LOGOUT } from "../actionTypes";
+
+const axiosInstance = axiosService.getInstance();
 
 // Action Creator FETCH_BOOKS from server
 const fetchBooksSuccess = books => {
@@ -17,7 +20,7 @@ export const fetchBooks = () => {
 // dispatch function send data to the store
   return dispatch => {
     // proxy to http://localhost:3005/api/books
-    axios.get(`http://localhost:3000/api/books`)
+    axiosInstance.get(`http://localhost:3000/api/books`)
       .then(books => {
         // debugger
         /* DO THIS IN THE FUTURE Sort data that we want to use for users without authentication*/
@@ -36,8 +39,9 @@ export const fetchBooks = () => {
         // dispatch action for geting data from server
         dispatch(fetchBooksSuccess(booksNoAuth));
       })
-      .catch(error => {
-
+      .catch(err => {
+        debugger
+        console.error(err);
       })
   }
 }
@@ -71,7 +75,7 @@ const loginFailure = (errors) => {
 
 export const checkAuthState = () => {
   return dispatch => {
-    if(AuthService.isAuthenticated()) {
+    if(authService.isAuthenticated()) {
       dispatch(loginSuccess());
     }
   }
@@ -88,7 +92,7 @@ export const login = (userData) => {
       let token = res.token;
       // save token to localStorage
       // this will be saved in the browser in localStorage
-      AuthService.saveToken(token);
+      authService.saveToken(token);
       dispatch(loginSuccess(token));
     })
     .catch((err) => {
@@ -98,6 +102,7 @@ export const login = (userData) => {
 }
 
 export const logout = () => {
+  authService.invalidateUser();
   return {
     type: LOGOUT
   }

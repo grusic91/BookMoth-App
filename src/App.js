@@ -10,7 +10,6 @@ import './App.css';
 import Header from 'components/shared/Header';
 import Main from 'containers/Main';
 
-
 const store = configureStore();
 
 class App extends React.Component {
@@ -23,16 +22,16 @@ class App extends React.Component {
     store.dispatch(actions.checkAuthState());
   }
 
-  logoutUser() {
-    store.dispatch(actions.logout());
-  }
-
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
-            <Header logoutUser={this.logoutUser} />
+          <div
+            className="App"
+            style={{
+              position: 'cover'
+            }}>
+            <Header />
             <Main />
           </div>
         </Router>

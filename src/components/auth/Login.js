@@ -15,7 +15,6 @@ class Login extends React.Component {
 
   loginUser (userData) {
     this.props.dispatch(actions.login(userData));
-
   }
 
   render () {
@@ -27,13 +26,18 @@ class Login extends React.Component {
     }
 
     return(
-      <div>
+      <div className="login-page">
         { successRegister &&
             <div className="alert alert-success">
                 <p>You have been successfuly registerd, please login now.</p>
             </div>
         }
         <LoginForm submitCb={this.loginUser} errors={errors} />
+          <div className="registerImage">
+            <img
+              width="200px" src={process.env.PUBLIC_URL + '/img/login-image.jpg'}
+              alt="Photo by hannah grace on Unsplash" />
+          </div>
       </div>
     )
   }
