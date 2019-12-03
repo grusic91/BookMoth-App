@@ -14,6 +14,15 @@ class AuthService {
     return jwt.decode(token);
   }
 
+  saveToken(token) {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  invalidateUser() {
+    // remove token from localStorage used for LOGOUT
+    localStorage.removeItem("auth_token");
+  }
+
   getExpiration(token) {
     const exp = this.decode(token).exp;
     // expiration time
@@ -29,14 +38,6 @@ class AuthService {
     return (token && this.isValid(token)) ? true : false;
   }
 
-  saveToken(token) {
-    return localStorage.setItem(this.tokenKey, token);
-  }
-
-  invalidateUser() {
-    // remove token from localStorage used for LOGOUT
-    return localStorage.removeItem(this.tokenKey);
-  }
 }
 
 export default new AuthService();
