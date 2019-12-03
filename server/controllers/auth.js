@@ -28,7 +28,6 @@ exports.register = async function(req, res, next) {
 
     // if passes everything to this point, get back token
     return res.status(200).json({ token });
-
     //await user.save();
 
   } catch (err) {

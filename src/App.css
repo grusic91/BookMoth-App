@@ -1,2 +1,49 @@
 p {
   background: #eb6e34; }
+
+.main {
+  min-height: 100vh; }
+
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background-position: center center;
+  background-size: cover;
+  color: #e5e5e3;
+  text-shadow: 0 0 8px #c1b2aa; }
+
+.home-content {
+  margin: 0 auto;
+  text-align: left;
+  width: 800px; }
+
+.login-page, .register-page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10rem;
+  background-position: center center;
+  background-size: cover;
+  color: #e5e5e3; }
+
+.books-list {
+  padding: 4rem; }
+
+.App {
+  min-height: 100%; }
