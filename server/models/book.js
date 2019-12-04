@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
-  title:  { type: String, required: true, max: [200, "Too long, max is 200 characters"]},
+  title:  { type: String, lowercase: true, required: true, max: [200, "Too long, max is 200 characters"]},
   author: { type: String, required: true, max: [128, "Too long, max is 128 characters"]},
   languege: String,
   publisher: String,
