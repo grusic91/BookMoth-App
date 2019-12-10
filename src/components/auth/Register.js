@@ -41,7 +41,7 @@ class Register extends React.Component {
         <div className="registerImage">
           <img
             width="200px" src={process.env.PUBLIC_URL + '/img/book-moth-register.jpg'}
-            alt="Photo by Emily Rudolph on Unsplash" />
+            alt="Photo_by_Emily_Rudolph_on_Unsplash" />
         </div>
       </div>
     )

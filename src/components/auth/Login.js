@@ -36,7 +36,7 @@ class Login extends React.Component {
           <div className="registerImage">
             <img
               width="200px" src={process.env.PUBLIC_URL + '/img/login-image.jpg'}
-              alt="Photo by hannah grace on Unsplash" />
+              alt="Photo_by_hannah_grace_on_Unsplash" />
           </div>
       </div>
     )

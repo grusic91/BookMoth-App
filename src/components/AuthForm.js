@@ -23,7 +23,6 @@ class AuthForm extends Component {
     const {heading, buttonText, signUp} = this.props;
     return(
       <div>
-
         <div className="row justify-content-md-center text-center">
           <div className="col-md-6">
             <form onSubmit={this.handleSubmit}>
