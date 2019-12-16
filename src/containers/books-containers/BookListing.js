@@ -5,17 +5,14 @@ import * as actions from 'store/actions';
 
 class BookListing extends React.Component {
 
-
   componentDidMount() {
     /* get books from DB*/
-    this.props.dispatch(actions.fetchBooks())
-
+    this.props.dispatch(actions.fetchBooks());
   }
 
   render() {
-    debugger
     return (
-      <div className="row books-list">
+      <div className="books-listing-page">
         <BookList books={this.props.books} />
       </div>
     )

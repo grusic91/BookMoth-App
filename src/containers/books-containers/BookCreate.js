@@ -9,12 +9,12 @@ class BookCreate extends React.Component {
     this.bookCategories = ['novel', 'poem', 'history-novel']
 
     this.state = {
-      errors: [],
+      errors: "",
       redirect: false
     }
-
     this.createNewBook = this.createNewBook.bind(this);
   }
+
   createNewBook (bookData) {
     actions.createBook(bookData).then(
       (book) => this.setState({redirect: true}),
@@ -27,26 +27,34 @@ class BookCreate extends React.Component {
       return <Redirect to={{pathname:`/books`}} />
     }
     return (
-      <section id="newBook">
-        <div className="book-form">
-          <div className="row">
-            <div className="col-md-5">
-              <h1>Create Book</h1>
-              <BookCreateForm
-                submitCb={this.createNewBook}
-                options={this.bookCategories}
-                errors={this.state.errors} />
-            </div>
-            <div className="col-md-6 ml-auto">
-              <div className="image-contaier">
-                <h2 className="catchprase">Books at home in reach of few clicks.</h2>
-                <img src={process.env.PUBLIC_URL + '/img/create-book.jpg'} width="450" alt=""/>
+      <div className="container" id="newBook">
+        <div className="row">
+          <div className="col-md-2"></div>
+          <div className="col-lg-8">
+            <div className="row form-box">
+              <div className="col-md-6">
+                <div className="form-title">Create Book</div>
+                <BookCreateForm
+                  submitCb={this.createNewBook}
+                  options={this.bookCategories}
+                  errors={this.state.errors} />
+              </div>
+              <div
+                className="form-img col-md-6"
+                style={{
+                     backgroundPosition: 'center',
+                     backgroundSize: 'cover',
+                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/book-moth-register.jpg`
+                     }}
+              >
+                <div className="form-img-text">
+                  <p>You are just few steps away to start using this amazing app!</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-      </section>
+      </div>
     )
   }
 }

@@ -7,19 +7,18 @@ import SearchInput from "./form/SearchInput";
 
 class Header extends Component {
   constructor() {
-    super()
-
+    super();
     this.logoutUser = this.logoutUser.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.hideSearch = this.hideSearch.bind(this);
   }
 
-componentDidMount() {
-  this.hideSearch()
-}
+  componentDidMount() {
+    this.hideSearch();
+  }
 
-/* Handling logout to redirect to homeapge*/
   handleLogout() {
+    /* logout user, redirect to homeapge */
     this.logoutUser();
     this.props.history.push('/');
   }
@@ -28,9 +27,9 @@ componentDidMount() {
     this.props.dispatch(actions.logout());
   }
 
-/*Hide search if !isAuth*/
   hideSearch() {
-    if(/*this.props.history.location.pathname === `/books` && */ this.props.auth.isAuth){
+    /*Hide search input if !isAuth*/
+    if(this.props.auth.isAuth){
       return false;
     }
     return true;
@@ -38,61 +37,57 @@ componentDidMount() {
 
 /*AUTH buttons rendering logic*/
   renderAuthButtons(isAuth) {
-
-      if(isAuth) {
-        return (
+    if(!isAuth) {
+      return (
+        <React.Fragment>
           <li className="nav-item">
-            <p className="nav-link" onClick={this.handleLogout}>LOGOUT</p>
+            <Link className="nav-link" to="/register">REGISTER</Link>
           </li>
-        )
-      }
-    return (
-      <React.Fragment>
-        <li className="nav-item">
-          <Link className="nav-link" to="/register">REGISTER</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/login">LOGIN</Link>
-        </li>
-      </React.Fragment>
-    )
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">LOGIN</Link>
+          </li>
+        </React.Fragment>
+      )
+    }
   }
 
   renderOwnerSection(isAuth) {
-
     if (isAuth) {
       return (
         <div className="dropdown">
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Owner Section
+            USER: {this.props.auth.username}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">Action</a>
+            <li className="nav-item">
+              <p className="nav-link" onClick={this.handleLogout}>LOGOUT</p>
+            </li>
             <Link className="nav-link dropdown-item" to="/books/new">Add Book</Link>
-            <Link className="nav-link dropdown-item" to="#">Manage Books</Link>
+            <Link className="nav-link dropdown-item" to="/">Manage Books</Link>
           </div>
         </div>
       )
     }
   }
-
+  // RENDER COMPONENT
   render() {
-    const {username, isAuth} = this.props.auth;
+    const {isAuth} = this.props.auth;
+
     return (
       <nav
+        id="header"
         className="navbar navbar-expand-sm fixed-top"
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">BOOKMOTH</Link>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div
-            className="collapse navbar-collapse" id="navbarTogglerDemo02">
-
+            className="collapse navbar-collapse"
+            id="navbarTogglerDemo02"
+          >
             <SearchInput hideSearch={this.hideSearch} />
-
             <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
@@ -100,9 +95,6 @@ componentDidMount() {
               <li className="nav-item">
                 <Link className="nav-link" to="/books">Books</Link>
               </li>
-              { isAuth &&
-                  <a className="nav-link nav-item ml-auto">{this.props.auth.username}</a>
-              }
               { this.renderOwnerSection(isAuth)}
               { this.renderAuthButtons(isAuth) }
             </ul>

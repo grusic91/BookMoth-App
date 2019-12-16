@@ -1,0 +1,16 @@
+.homepage {
+  padding: 1.5rem;
+  font-family: $main-font-family;
+
+  .home-content {
+    color: $main-homepage-color;
+    text-shadow: 0 0 8px #c1b2aa;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 200px;
+  }
+
+  #homepage-description {
+    margin-top: 150px;
+  }
+}

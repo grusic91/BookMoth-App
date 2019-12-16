@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const BookCard = ({book}) => {
 
   return (
-    <div className="card" style={{width: "18rem"}}>
+    <div className="card" style={{width: "16rem"}}>
       <img src="https://via.placeholder.com/350x250" className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>

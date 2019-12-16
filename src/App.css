@@ -1,49 +1,123 @@
-p {
-  background: #eb6e34; }
-
-.main {
-  min-height: 100vh; }
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+.navbar {
+  padding: 20px;
+  margin-bottom: 40px; }
+  .navbar .navbar-brand {
+    margin-right: 30px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #4b4b4b;
+    font-weight: 500; }
+  .navbar .nav-link {
+    color: #4b4b4b; }
+  .navbar .nav-link:hover {
+    color: #eb6e34;
+    font-weight: bold;
+    border: 1px solid #4b4b4b;
+    border-radius: 2px; }
+  .navbar .navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #c1292938;
+    border: 1px solid #b75f5f;
+    border-radius: .25rem; }
+  .navbar .show {
+    background-color: white; }
 
 .homepage {
-  width: 100vw;
-  height: 100vh;
+  padding: 1.5rem;
+  font-family: Roboto; }
+  .homepage .home-content {
+    color: #07192b;
+    text-shadow: 0 0 8px #c1b2aa;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 200px; }
+  .homepage #homepage-description {
+    margin-top: 150px; }
+
+.books-listing-page {
+  padding: 4rem;
+  margin: auto; }
+  .books-listing-page .card {
+    margin: 10px; }
+
+#book-detail-page {
+  margin-top: 50px; }
+
+/*Style for Forms*/
+.form-box {
+  margin-top: 120px;
+  box-shadow: -1px 1px 50px 10px black; }
+
+.form-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 !important; }
+
+.form-title {
+  margin-bottom: 50px;
+  font-size: 27px;
+  padding-top: 20px;
+  text-decoration: underline; }
+
+.form-img-text {
+  padding: 35% 20px 35% 20px;
+  background-color: #07192b;
+  opacity: 0.5;
+  color: white;
+  text-align: center; }
+
+.textarea {
+  border: 2px solid black; }
+
+.label {
+  font-size: 19px;
+  color: #07192b;
+  font-weight: bold; }
+
+.btn-success {
+  background-color: #07192b !important;
+  border-color: #07192b !important;
+  margin-bottom: 30px !important; }
+
+.btn-success:hover {
+  background-color: #eb6e34 !important; }
+
+#newBook {
+  padding-top: 250px; }
+
+#success-alert {
+  margin-top: 100px; }
+
+html {
+  height: 100%; }
+
+body {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+h1 {
+  font-family: Open Sans;
+  font-weight: bold; }
+
+.component-container {
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background-position: center center;
-  background-size: cover;
-  color: #e5e5e3;
-  text-shadow: 0 0 8px #c1b2aa; }
-
-.home-content {
-  margin: 0 auto;
-  text-align: left;
-  width: 800px; }
-
-.login-page, .register-page {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10rem;
-  background-position: center center;
-  background-size: cover;
-  color: #e5e5e3; }
-
-.books-list {
-  padding: 4rem; }
+  padding: 1.5rem;
+  font-family: Roboto;
+  overflow: auto;
+  height: -webkit-fill-available !important; }
 
 .App {
   min-height: 100%; }

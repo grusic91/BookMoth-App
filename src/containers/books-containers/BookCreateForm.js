@@ -33,9 +33,9 @@ const BookCreateForm = props => {
         label="Category"
       />
       <Field
-        className="form-control"
+        className="form-control textarea"
         name="description"
-        rows="10"
+        rows="6"
         component={BookTextArea}
         label="Description"
         type="text"

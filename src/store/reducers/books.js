@@ -17,13 +17,12 @@ const INITIAL_STATE = {
 }
 
 export const bookReducer = (state = INITIAL_STATE.books, action) => {
-  // debugger
   switch (action.type) {
     case FETCH_BOOKS_INIT:
-    debugger
+
       return { ...state, data: [], errors: [] }
     case FETCH_BOOKS_SUCCESS:
-      debugger
+
       return {...state, data: action.books}
     case FETCH_BOOKS_FAIL:
       return { ...state, errors: action.errors, data: []}

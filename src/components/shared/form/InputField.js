@@ -8,7 +8,7 @@ export const InputField = ({
   meta: { touched, error, warning }
 }) => (
   <div className="form-group">
-    <label>{label}</label>
+    <label className="label control-label">{label}</label>
     <div className="input-group">
       <input {...input} type={type} className={className} />
     </div>

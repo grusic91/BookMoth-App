@@ -1,58 +1,34 @@
 @import "variables.scss";
 @import 'header/header.scss';
+@import 'homepage/homepage.scss';
+@import 'books-containers/books.scss';
+@import 'books-containers/create-book.scss';
+@import 'form/forms.scss';
 
+html { height:100%; }
 
-p {
-  background: $main-background;
+body {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
-.main {
-  min-height: 100vh;
-
+h1 {
+  font-family: $main-title-font-family;
+  font-weight: bold;
 }
 
-.homepage {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+.component-container {
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  padding: 1rem;
-  background-position: center center;
-  background-size: cover;
-  color: #e5e5e3;
-  text-shadow: 0 0 8px #c1b2aa;
-}
-
-.home-content {
-  margin: 0 auto;
-  text-align: left;
-  width: 800px;
-}
-
-.login-page, .register-page {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10rem;
-  background-position: center center;
-  background-size: cover;
-  color: #e5e5e3;
-}
-
-.books-list {
-  padding: 4rem;
+  padding: 1.5rem;
+  font-family: Roboto;
+  overflow: auto;
+  height: -webkit-fill-available !important;
 }

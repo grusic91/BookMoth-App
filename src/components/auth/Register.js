@@ -18,7 +18,6 @@ class Register extends React.Component {
     actions.register(userData)
       .then(
         (registered) => {
-          debugger
           // when registered successful redirect
           this.setState({redirect: true});
         },
@@ -30,18 +29,34 @@ class Register extends React.Component {
 
   render () {
     const { errors, redirect } = this.state;
-
     if(redirect) {
       return <Redirect to={{pathname: '/login', state: { successRegister: true }}} />
     }
 
     return(
-      <div className="register-page">
-        <RegisterForm submitCb={this.registerUser} errors={errors} />
-        <div className="registerImage">
-          <img
-            width="200px" src={process.env.PUBLIC_URL + '/img/book-moth-register.jpg'}
-            alt="Photo_by_Emily_Rudolph_on_Unsplash" />
+      <div id="register-page" className="container">
+        <div className="row">
+          <div className="col-md-2"></div>
+          <div className="col-md-8">
+            <div className="row form-box">
+              <div className="col-md-6">
+                <div className="form-title">Registration Form - Sign up</div>
+                <RegisterForm submitCb={this.registerUser} errors={errors} />
+              </div>
+              <div
+                className="form-img col-md-6"
+                style={{
+                     backgroundPosition: 'center',
+                     backgroundSize: 'cover',
+                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/book-shelve.jpg`
+                     }}
+               >
+               <div className="form-img-text">
+                 <p>You are just few steps away to start using this amazing app!</p>
+               </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -46,7 +46,7 @@ const RegisterForm = props => {
       <button className="btn btn-success fomr-control"
           type="submit"
           disabled={!valid || pristine || submitting}>
-        Submit
+        Register
       </button>
       { /*Displaying errors from response*/
         <ResErrors errors={errors} />

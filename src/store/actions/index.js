@@ -14,7 +14,6 @@ const axiosInstance = axiosService.getInstance();
 
 // Action Creator FETCH_BOOKS from server
 const fetchBooksSuccess = books => {
-  debugger
   return {
     type: FETCH_BOOKS_SUCCESS,
     books
@@ -22,7 +21,6 @@ const fetchBooksSuccess = books => {
 }
 
 const fetchBooksInit = () => {
-  debugger
   // reset our data to empty arrays
   return {
     type: FETCH_BOOKS_INIT,
@@ -43,7 +41,6 @@ const fetchBookByIdInit = () => {
 }
 
 const fetchBookByIdSuccess = (book) => {
-  debugger
   return {
     type: FETCH_BOOK_BY_ID_SUCCESS,
     book
@@ -52,12 +49,10 @@ const fetchBookByIdSuccess = (book) => {
 
 /*FETCH BOOKS*/
 export const fetchBooks = (title) => {
-  debugger
   // create url and check for title if title is use url with title elese for all boooks
   const url = title ? `http://localhost:3000/api/books?title=${title}`: `http://localhost:3000/api/books`;
 // dispatch function send data to the store
   return dispatch => {
-    debugger
     // debugger
     // frist reset data with fetchBooksInit
     // when navigating between search page and normal books page, reset data before request
@@ -77,7 +72,6 @@ export const fetchBooks = (title) => {
 
 /* GET BOOK BY ID*/
 export const fetchBookById = (bookId) => {
-  debugger
   /*bookId get from URL set in BookDetail*/
   // GET book from DB finded by ID
   return dispatch => {

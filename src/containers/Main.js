@@ -15,7 +15,16 @@ import { LoggedInRoute } from "components/shared/authRoutes/LoggedInRoute";
 
 const Main = (props) => {
   return (
-    <div className="main">
+    <div
+      id="main-page"
+      className="component-container"
+      style={{
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundImage: `url(${process.env.PUBLIC_URL} /img/homepage-background1.jpg)`,
+        backgroundAttachment: 'fixed'
+      }}
+      >
       <Switch>
         <Route exact path="/" component={Homepage } />
         <Route exact path="/books" component={BookListing}/>
