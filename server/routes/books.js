@@ -4,6 +4,17 @@ const { authMiddleware } = require("../controllers/auth");
 const Book = require("../models/book");
 const User = require("../models/user");
 
+/*Get books that belong to my account*/
+router.get("/books/manage", authMiddleware, async function(req,res,next) {
+  try {
+    const user = res.locals.user;
+    let books = await Book.where({users: user})
+    return res.json(books)
+  } catch (err) {
+    return next(err)
+  }
+})
+
 /*GET - /api/books/:id*/
 // get books with specific id
 router.get("/books/:id", authMiddleware, async function(req, res, next) {
@@ -14,6 +25,18 @@ router.get("/books/:id", authMiddleware, async function(req, res, next) {
     return next(err);
   }
 });
+
+/* DELETE BOOK */
+router.delete("/books/:id", authMiddleware, async function(req, res, next) {
+  try {
+    let foundBook = await Book.findById(req.params.id);
+    await foundBook.remove()
+    return res.status(200).json(foundBook)
+  } catch (err) {
+    return next(err)
+  }
+});
+
 
 /*Get all Books from DB */
 // route: /api/books
