@@ -37,7 +37,6 @@ router.delete("/books/:id", authMiddleware, async function(req, res, next) {
   }
 });
 
-
 /*Get all Books from DB */
 // route: /api/books
 router.get("/books",  async function(req, res, next) {
@@ -82,8 +81,5 @@ router.post("/books", authMiddleware, async function(req, res, next) {
     return next(err);
   }
 });
-
-
-
 
 module.exports = router;

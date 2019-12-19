@@ -42,10 +42,16 @@
   padding: 4rem;
   margin: auto; }
   .books-listing-page .card {
-    margin: 10px; }
+    margin: 10px;
+    margin-bottom: 20px !important; }
 
 #book-detail-page {
   margin-top: 50px; }
+
+#book-manage-page {
+  margin-top: 50px; }
+  #book-manage-page .card {
+    margin-bottom: 20px; }
 
 /*Style for Forms*/
 .form-box {
@@ -86,9 +92,6 @@
 
 .btn-success:hover {
   background-color: #eb6e34 !important; }
-
-#newBook {
-  padding-top: 250px; }
 
 #success-alert {
   margin-top: 100px; }

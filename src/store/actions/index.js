@@ -53,7 +53,6 @@ export const fetchBooks = (title) => {
   const url = title ? `http://localhost:3000/api/books?title=${title}`: `http://localhost:3000/api/books`;
 // dispatch function send data to the store
   return dispatch => {
-    // debugger
     // frist reset data with fetchBooksInit
     // when navigating between search page and normal books page, reset data before request
     dispatch(fetchBooksInit());
@@ -61,7 +60,6 @@ export const fetchBooks = (title) => {
     axiosInstance.get(url)
       .then(res => {
           return res.data
-
       })
       .then(booksNoAuth => dispatch(fetchBooksSuccess(booksNoAuth)))
       .catch(({response}) => {
@@ -84,6 +82,35 @@ export const fetchBookById = (bookId) => {
   }
 }
 
+/* Create New Book*/
+export const createBook = (bookData) => {
+  return axiosInstance.post(`http://localhost:3000/api/books`, bookData)
+    .then(
+      (res) => {
+        return res.data;
+      },
+      (err) => {
+        return Promise.reject(err.response.data.error.message);
+      }
+    )
+}
+
+// GET USER'S BOOKS
+export const getUserBooks = () => {
+  return axiosInstance.get(`http://localhost:3000/api/books/manage`).then(
+        res => res.data,
+        err => Promise.reject(err.response.data.error.message)
+      )
+}
+
+// DELETE USER'S Book
+export const deleteUsersBook = (bookData) => {
+  return axiosInstance.delete(`http://localhost:3000/api/books/${bookData}`)
+    .then(
+        res => res.data,
+        err => Promise.reject(err.response.data.error.message)
+      );
+}
 
 // REGISTER USER
 export const register = (userData) => {
@@ -147,17 +174,4 @@ export const logout = () => {
   return {
     type: LOGOUT
   }
-}
-
-/* Create New Book*/
-export const createBook = (bookData) => {
-  return axiosInstance.post(`http://localhost:3000/api/books`, bookData)
-    .then(
-      (res) => {
-        return res.data;
-      },
-      (err) => {
-        return Promise.reject(err.response.data.error.message);
-      }
-    )
 }

@@ -25,7 +25,6 @@ class AxiosService {
         return config;
       },
       (error) => {
-        debugger
         return Promise.reject(error);
       }
     );

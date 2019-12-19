@@ -26,11 +26,33 @@ const BookCreateForm = props => {
         type="text"
       />
       <Field
+        className="form-control"
+        name="languege"
+        component={InputField}
+        label="Language"
+        type="text"
+      />
+      <Field
+        className="form-control"
+        name="publisher"
+        component={InputField}
+        label="Publisher"
+        type="text"
+      />
+      <Field
         options={options}
         className="form-control"
         name="category"
         component={BookSelectCategory}
         label="Category"
+      />
+      <Field
+        options={options}
+        className="form-control"
+        name="pages"
+        type="number"
+        component={InputField}
+        label="Pages"
       />
       <Field
         className="form-control textarea"
@@ -45,6 +67,7 @@ const BookCreateForm = props => {
         component={BookFileUpload}
         label="Image URL"
       />
+    
       <Field
         name="readed"
         component={InputField}
@@ -85,8 +108,6 @@ const validate = values => {
   if (!values.bookImgUrl) {
     errors.bookImgUrl = "Please enter bookImgUrl!";
   }
-
-
   return errors
 }
 

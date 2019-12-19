@@ -10,7 +10,6 @@ const INITIAL_STATE = {
 }
 
 export const authReducer = (state = INITIAL_STATE, action) => {
-  // debugger
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {...state, isAuth: true, errors: [], username: action.username}

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {BookList} from "./BookList";
+import { BookList } from "./books-page/BookList";
 import * as actions from 'store/actions';
 
 class BookSearchListing extends React.Component {
@@ -12,13 +12,10 @@ class BookSearchListing extends React.Component {
   };
 
   componentDidMount() {
-    debugger
       this.searchBookByTitle();
   }
 
-// dispatch
   searchBookByTitle() {
-    debugger
     const searchedBook = this.props.match.params.title;
     this.setState({searchedBook});
     this.props.dispatch(actions.fetchBooks(searchedBook));
@@ -30,9 +27,7 @@ class BookSearchListing extends React.Component {
     let title = '';
     let detail = '';
 
-
     if (errors.length > 0 ) {
-      // debugger
       title = errors[0].title;
       detail = errors[0].detail;
       return (
@@ -43,14 +38,12 @@ class BookSearchListing extends React.Component {
       )
     }
     if( data.length > 0) {
-      // debugger
       title = `Your Searched book is ${searchedBook}`;
       return <h1>{title}</h1>;
     }
   }
 
   render() {
-    debugger
     return (
       <div className="bookSearchListing">
         <div>
@@ -68,7 +61,6 @@ class BookSearchListing extends React.Component {
 }
 
 function mapStateToProps(state) {
-  debugger
   return {
     books: state.books
   }

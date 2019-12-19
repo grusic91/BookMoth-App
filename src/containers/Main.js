@@ -3,10 +3,11 @@ import { Switch, Route, withRouter} from "react-router-dom";
 
 //import components
 import Homepage from "components/Homepage";
-import BookListing from "./books-containers/BookListing";
+import BookListing from "./books-containers/books-page/BookListing";
+import BookCreate from "./books-containers/book-create/BookCreate";
+import BookManage from "./books-containers/manage/BookManage";
 import BookSearchListing from "./books-containers/BookSearchListing";
 import BookDetail from "./books-containers/BookDetail";
-import BookCreate from "./books-containers/BookCreate";
 import Register from "components/auth/Register";
 import Login from "components/auth/Login";
 
@@ -29,6 +30,7 @@ const Main = (props) => {
         <Route exact path="/" component={Homepage } />
         <Route exact path="/books" component={BookListing}/>
         <ProtectedRoute exact path="/books/new" component={BookCreate}/>
+        <ProtectedRoute exact path="/books/manage" component={BookManage} />
         <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>
         <ProtectedRoute exact path="/books/:id" component={BookDetail}/>
         <LoggedInRoute exact path="/register" component={Register} />

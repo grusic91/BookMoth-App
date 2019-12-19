@@ -63,7 +63,7 @@ class Header extends Component {
               <p className="nav-link" onClick={this.handleLogout}>LOGOUT</p>
             </li>
             <Link className="nav-link dropdown-item" to="/books/new">Add Book</Link>
-            <Link className="nav-link dropdown-item" to="/">Manage Books</Link>
+            <Link className="nav-link dropdown-item" to="/books/manage">Manage Books</Link>
           </div>
         </div>
       )
