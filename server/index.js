@@ -14,9 +14,6 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3005;
 
-// useful to see the acutal Mongo queries that are being run in terminal
-mongoose.set("debug", true);
-
 // important for using async functions
 mongoose.Promise = Promise;
 
@@ -29,10 +26,7 @@ mongoose.connect(config.DB_URI, {
 })
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
-      //const fakeDb = new FakeDb();
-      console.log(process.env.NODE_ENV);
-      console.log(process.env.DB_URI);
-      console.log(process.env.SECRET);
+      fakeDb = new FakeDb();
     }
   });
 
