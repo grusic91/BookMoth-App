@@ -2,6 +2,7 @@ import axios from 'axios';
 import authService from './auth-service';
 
 class AxiosService {
+
   axiosInstance = {};
 
   constructor() {
@@ -10,8 +11,8 @@ class AxiosService {
 
   initInsatnce() {
     this.axiosInstance = axios.create({
-      baseURL: 'http://localhost:3000/api/',
-      timeout: 1000
+      baseURL: '/api',
+      timeout: 5000
     });
 
 

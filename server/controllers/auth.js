@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/user");
-const config = require("../config/dev");
+const jwt = require('jsonwebtoken');
+const User = require('../models/user');
+const config = require('../config');
 
 // REGISTER USER
 exports.register = async function(req, res, next) {

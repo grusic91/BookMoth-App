@@ -25,6 +25,7 @@ export const bookReducer = (state = INITIAL_STATE.books, action) => {
 
       return {...state, data: action.books}
     case FETCH_BOOKS_FAIL:
+    debugger
       return { ...state, errors: action.errors, data: []}
     default:
       return state;

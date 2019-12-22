@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## to start working on Dev Server
+npm run start-dev
+
+## to start production
+npm start
+
 ## Instaled packages for styles:
 * Bootstrap (CSS framework)
 ###  * `npm install bootstrap`
