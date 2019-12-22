@@ -1,14 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-const config = require("./config/dev");
-const FakeDb = require("./fake-db");
-const errorHandler = require("./handler/error");
-const Book = require("./models/book");
+const config = require('./config');
+const FakeDb = require('./fake-db');
+const errorHandler = require('./handler/error');
+const Book = require('./models/book');
 
-const authRoutes = require("./routes/auth");
-const booksRoutes = require("./routes/books");
+const authRoutes = require('./routes/auth');
+const booksRoutes = require('./routes/books');
+
+const path = require('path');
 
 const PORT = process.env.PORT || 3005;
 
@@ -26,16 +28,31 @@ mongoose.connect(config.DB_URI, {
   useCreateIndex: true
 })
   .then(() => {
-    const fakeDb = new FakeDb();
-     //fakeDb.seedDb();
+    if (process.env.NODE_ENV !== 'production') {
+      //const fakeDb = new FakeDb();
+      console.log(process.env.NODE_ENV);
+      console.log(process.env.DB_URI);
+      console.log(process.env.SECRET);
+    }
   });
 
 const app = express();
+
 app.use(bodyParser.json());
 
 // Routes come here
 app.use("/api/auth", authRoutes);
 app.use("/api", booksRoutes);
+console.log(process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === 'production') {
+  const appPath = path.join(__dirname, '..', 'build')
+  app.use(express.static(appPath));
+
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(appPath, 'index.html'));
+  });
+}
 
 /*Error handler if the route cann not be reached*/
 app.use(function(req, res, next) {

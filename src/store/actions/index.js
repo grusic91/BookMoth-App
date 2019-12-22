@@ -50,13 +50,13 @@ const fetchBookByIdSuccess = (book) => {
 /*FETCH BOOKS*/
 export const fetchBooks = (title) => {
   // create url and check for title if title is use url with title elese for all boooks
-  const url = title ? `http://localhost:3000/api/books?title=${title}`: `http://localhost:3000/api/books`;
+  const url = title ? `/books?title=${title}`: `/books`;
 // dispatch function send data to the store
   return dispatch => {
     // frist reset data with fetchBooksInit
     // when navigating between search page and normal books page, reset data before request
     dispatch(fetchBooksInit());
-    // proxy to http://localhost:3005/api/books
+
     axiosInstance.get(url)
       .then(res => {
           return res.data
@@ -75,16 +75,19 @@ export const fetchBookById = (bookId) => {
   return dispatch => {
     dispatch(fetchBookByIdInit());
 
-    axiosInstance.get(`http://localhost:3000/api/books/${bookId}`)
-      .then(res => res.data)
-      .then(book => dispatch(fetchBookByIdSuccess(book)))
-      .catch(err => console.log(err))
+    axiosInstance.get(`/books/${bookId}`)
+      .then(res => {
+        return dispatch(fetchBookByIdSuccess(res.data))
+      })
+      .catch(err =>{
+        return Promise.reject(err.response.data.error.message);
+      })
   }
 }
 
 /* Create New Book*/
 export const createBook = (bookData) => {
-  return axiosInstance.post(`http://localhost:3000/api/books`, bookData)
+  return axiosInstance.post(`/books`, bookData)
     .then(
       (res) => {
         return res.data;
@@ -97,7 +100,7 @@ export const createBook = (bookData) => {
 
 // GET USER'S BOOKS
 export const getUserBooks = () => {
-  return axiosInstance.get(`http://localhost:3000/api/books/manage`).then(
+  return axiosInstance.get(`/books/manage`).then(
         res => res.data,
         err => Promise.reject(err.response.data.error.message)
       )
@@ -105,7 +108,7 @@ export const getUserBooks = () => {
 
 // DELETE USER'S Book
 export const deleteUsersBook = (bookData) => {
-  return axiosInstance.delete(`http://localhost:3000/api/books/${bookData}`)
+  return axiosInstance.delete(`/books/${bookData}`)
     .then(
         res => res.data,
         err => Promise.reject(err.response.data.error.message)
@@ -114,7 +117,7 @@ export const deleteUsersBook = (bookData) => {
 
 // REGISTER USER
 export const register = (userData) => {
-  return axios.post(`http://localhost:3000/api/auth/register`, {...userData})
+  return axios.post(`/api/auth/register`, {...userData})
     .then(
       (res) => {
         return res.data;
@@ -151,7 +154,7 @@ export const checkAuthState = () => {
 
 export const login = (userData) => {
   return dispatch => {
-    return axios.post("http://localhost:3000/api/auth/login", {...userData})
+    return axios.post(`/api/auth/login`, {...userData})
     .then(res => {
       return res.data;
     })
