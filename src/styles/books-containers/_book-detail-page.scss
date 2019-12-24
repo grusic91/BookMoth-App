@@ -1,0 +1,30 @@
+#book-detail-page {
+  margin-top: 80px;
+  background-color: silver;
+
+  .book {
+    &-title {
+      color: $main-text-color;
+      text-transform: capitalize;
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 1.75rem;
+      padding: 6px 12px;
+    }
+    &-author {
+      color: $main-homepage-color;
+      font-size: 1.5em;
+      padding: 6px 12px;
+    }
+    &-category {
+      color: purple;
+      text-transform: uppercase;
+      font-weight: 550;
+      letter-spacing: 0.10em;
+      padding: 6px 12px;
+    }
+  }
+  .card-text {
+    padding: 6px 12px;
+  }
+}

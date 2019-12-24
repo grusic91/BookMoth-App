@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { authMiddleware } = require("../controllers/auth");
-const Book = require("../models/book");
-const User = require("../models/user");
+const { authMiddleware } = require('../controllers/auth');
+const Book = require('../models/book');
+const User = require('../models/user');
 
 /*Get books that belong to my account*/
 router.get("/books/manage", authMiddleware, async function(req,res,next) {
@@ -26,14 +26,43 @@ router.get("/books/:id", authMiddleware, async function(req, res, next) {
   }
 });
 
+// UPDATE BOOK
+router.patch("/books/:id", authMiddleware, async function(req, res, next) {
+  try {
+    const bookData = req.body;
+    const user = res.locals.user;
+    
+    let foundBookById = await Book
+      .findById(req.params.id)
+      .populate('user', '_id')
+      .exec(function(err, foundBook) {
+        if(err) {
+          return res.status(422).send({erros: err.errors})
+        }
+        if(!foundBook.users.includes(user.id)){
+          return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not owner of this book!'}]})
+        }
+        foundBook.set(bookData);
+        foundBook.save(function(err) {
+          if (err) {
+            return res.status(422).send({erros: err.errors})
+          }
+          return res.status(200).json(foundBook);
+        });
+      });
+  } catch (err) {
+    return next(err);
+  }
+});
+
 /* DELETE BOOK */
 router.delete("/books/:id", authMiddleware, async function(req, res, next) {
   try {
     let foundBook = await Book.findById(req.params.id);
     await foundBook.remove()
-    return res.status(200).json(foundBook)
+    return res.status(200).json(foundBook);
   } catch (err) {
-    return next(err)
+    return next(err);
   }
 });
 

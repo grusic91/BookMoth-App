@@ -48,7 +48,7 @@ class Register extends React.Component {
                 style={{
                      backgroundPosition: 'center',
                      backgroundSize: 'cover',
-                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/book-shelve.jpg`
+                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/book-shelve.jpg)`
                      }}
                >
                <div className="form-img-text">

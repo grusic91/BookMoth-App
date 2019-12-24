@@ -26,7 +26,7 @@ mongoose.connect(config.DB_URI, {
 })
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
-      fakeDb = new FakeDb();
+      //fakeDb = new FakeDb();
     }
   });
 
@@ -37,7 +37,6 @@ app.use(bodyParser.json());
 // Routes come here
 app.use("/api/auth", authRoutes);
 app.use("/api", booksRoutes);
-console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   const appPath = path.join(__dirname, '..', 'build')
