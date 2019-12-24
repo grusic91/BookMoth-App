@@ -1,14 +1,16 @@
-import axios from "axios";
-import authService from "../services/auth-service";
-import axiosService from "../services/axios-service";
-import { FETCH_BOOKS_SUCCESS } from "../actionTypes";
-import { LOGIN_SUCCESS } from "../actionTypes";
-import { LOGIN_FAILURE } from "../actionTypes";
-import { LOGOUT } from "../actionTypes";
-import { FETCH_BOOKS_INIT } from "../actionTypes";
-import { FETCH_BOOKS_FAIL } from "../actionTypes";
-import { FETCH_BOOK_BY_ID_SUCCESS } from "../actionTypes";
-import { FETCH_BOOK_BY_ID_INIT } from "../actionTypes";
+import axios from 'axios';
+import authService from '../services/auth-service';
+import axiosService from '../services/axios-service';
+import { FETCH_BOOKS_SUCCESS } from '../actionTypes';
+import { LOGIN_SUCCESS } from '../actionTypes';
+import { LOGIN_FAILURE } from '../actionTypes';
+import { LOGOUT } from '../actionTypes';
+import { FETCH_BOOKS_INIT } from '../actionTypes';
+import { FETCH_BOOKS_FAIL } from '../actionTypes';
+import { FETCH_BOOK_BY_ID_SUCCESS } from '../actionTypes';
+import { FETCH_BOOK_BY_ID_INIT } from '../actionTypes';
+import { UPDATE_BOOK_SUCCESS} from '../actionTypes';
+import { UPDATE_BOOK_FAIL} from '../actionTypes';
 
 const axiosInstance = axiosService.getInstance();
 
@@ -177,4 +179,28 @@ export const logout = () => {
   return {
     type: LOGOUT
   }
+}
+
+// UPDATE BOOKS
+const updateBookSuccess = (updatedBook) => {
+  return {
+    type: UPDATE_BOOK_SUCCESS,
+    book: updatedBook
+  }
+}
+
+const updateBookFail = (errors) => {
+  return {
+    type: UPDATE_BOOK_FAIL,
+    errors
+  }
+}
+
+export const updateBook = (id, bookData) => dispatch => {
+  return axiosInstance.patch(`/books/${id}`, bookData)
+    .then(res => res.data)
+    .then(updatedBook => {
+      dispatch(updateBookSuccess(updatedBook));
+    })
+    .catch(({response}) => dispatch(updateBookFail(response.data.errors)))
 }

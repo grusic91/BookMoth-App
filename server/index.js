@@ -26,7 +26,8 @@ mongoose.connect(config.DB_URI, {
 })
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
-      //fakeDb = new FakeDb();
+      fakeDb = new FakeDb();
+       // fakeDb.seedDb()
     }
   });
 
