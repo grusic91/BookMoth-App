@@ -7,7 +7,6 @@ class BookManageCard extends React.Component {
     this.state = {
       wantDelete: false,
     }
-    // this.deleteBook = this.deleteBook.bind(this);
     this.showDeleteMenue = this.showDeleteMenue.bind(this);
   }
 
@@ -35,10 +34,15 @@ class BookManageCard extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{book.title}</h5>
             <p className="card-text">{book.description}</p>
-            <Link to={`/books/${book._id}`} className="btn btn-primary">Manage this book</Link>
+
             {
               !wantDelete &&
-              <button onClick={this.showDeleteMenue} className="btn btn-danger">Delete</button>
+              <React.Fragment>
+                <button onClick={this.showDeleteMenue} className="btn btn-danger">Delete</button>
+                <Link to={{pathname: `/books/${book._id}`, state: { isUpdate: true}}}
+                      className="btn btn-primary">Update</Link>
+              </React.Fragment>
+
             }
             {
               wantDelete &&

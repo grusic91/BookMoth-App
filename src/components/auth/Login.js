@@ -45,7 +45,7 @@ class Login extends React.Component {
                 style={{
                      backgroundPosition: 'center',
                      backgroundSize: 'cover',
-                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/create-book.jpg`
+                     backgroundImage: `url(${process.env.PUBLIC_URL} /img/create-book.jpg)`
                      }}
               >
                 <div className="form-img-text">

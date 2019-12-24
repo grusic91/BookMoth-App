@@ -26,20 +26,6 @@ const BookCreateForm = props => {
         type="text"
       />
       <Field
-        className="form-control"
-        name="languege"
-        component={InputField}
-        label="Language"
-        type="text"
-      />
-      <Field
-        className="form-control"
-        name="publisher"
-        component={InputField}
-        label="Publisher"
-        type="text"
-      />
-      <Field
         options={options}
         className="form-control"
         name="category"
@@ -49,10 +35,38 @@ const BookCreateForm = props => {
       <Field
         options={options}
         className="form-control"
+        name="edition"
+        component={BookSelectCategory}
+        label="Edition"
+      />
+      <Field
+        className="form-control"
+        name="publisher"
+        component={InputField}
+        label="Publisher"
+        type="text"
+      />
+      <Field
+        className="form-control"
+        name="languege"
+        component={InputField}
+        label="Language"
+        type="text"
+      />
+      <Field
+        options={options}
+        className="form-control"
         name="pages"
         type="number"
         component={InputField}
         label="Pages"
+      />
+      <Field
+        className="form-control"
+        name="isbn"
+        component={InputField}
+        label="ISBN"
+        type="text"
       />
       <Field
         className="form-control textarea"
@@ -67,14 +81,12 @@ const BookCreateForm = props => {
         component={BookFileUpload}
         label="Image URL"
       />
-    
       <Field
         name="readed"
         component={InputField}
         label="Readed"
         type="checkbox"
       />
-
       <button className="btn btn-success fomr-control"
           type="submit"
           disabled={!valid || pristine || submitting}>

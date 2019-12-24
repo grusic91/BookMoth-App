@@ -57,7 +57,7 @@ class BookManage extends React.Component {
           !isFetching && userBooks.length === 0 &&
             <div className="alert alert-warning">
               You have no Books created. Go to Add Book sesction and create your first book today!
-              <Link style={{"marginLeft": "10px"}} to="books/new">Create Book</Link>
+              <Link style={{"marginLeft": "10px"}} to="new">Create Book</Link>
             </div>
         }
       </div>
