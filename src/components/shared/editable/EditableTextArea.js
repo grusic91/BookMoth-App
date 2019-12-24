@@ -1,20 +1,22 @@
 import React from 'react';
 import { EditableComponent } from './EditableComponent';
 
-export class EditableInput extends EditableComponent {
+export class EditableTextArea extends EditableComponent {
 
   renderComponentView() {
     const {value, isActive} = this.state;
-    const { className, entityField } = this.props;
+    const { className, entityField, rows, cols } = this.props;
 
     if(isActive) {
       return (
         <React.Fragment >
-          <input className={`${className} form-control`}
+          <textarea className={`${className} form-control`}
+          rows={rows}
+          cols={cols}
                  onChange={(event) => this.handleChange(event)}
                  value={value}
                  placeholder={entityField}
-                 />
+          ></textarea>
           <button onClick={() => this.disableEdit()}
                   className="btn btn-warning btn-editable"
                   type="button"> Close </button>

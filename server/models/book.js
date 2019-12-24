@@ -7,13 +7,15 @@ const bookSchema = new Schema({
             required: true, max: [200, "Too long, max is 200 characters"]},
   author: { type: String,
             required: true, max: [128, "Too long, max is 128 characters"]},
-  languege: String,
-  publisher: String,
+  language: { type: String, default: "/"},
+  edition: { type: String, default: "/"},
+  publisher: { type: String, default: "/"},
   category: { type: String, required: true, lowercase: true},
-  pages: Number,
+  pages: {type: Number },
   description: { type: String, required: true},
   cratedAt: { type: Date, default: Date.now },
-  image_url: String,
+  image_url: {type: String},
+  isbn: {type: String, default: ""},
   users: [{ type: Schema.Types.ObjectId, ref: "User"}]
 });
 

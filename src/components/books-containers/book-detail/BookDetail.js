@@ -14,7 +14,7 @@ class BookDetail extends Component {
   renderBookDetail(book) {
     const { isUpdate } = this.props.location.state || false;
 
-    return isUpdate ? <BookDetailUpdate book={book} />
+    return isUpdate ? <BookDetailUpdate dispatch={this.props.dispatch} book={book} />
                     : <BookDetailInfo book={book} />
 
   }

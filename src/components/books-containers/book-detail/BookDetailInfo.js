@@ -14,11 +14,11 @@ export const BookDetailInfo = ({book}) => {
           <h3 className="book-title card-title">{book.title}</h3>
           <h4 className="book-author">{book.author}</h4>
           <p className="book-category card-text">{book.category}</p>
-          <p className="book-edition card-text">Edition: 12th edition</p>
+          <p className="book-edition card-text">{book.edition}</p>
           <p className="book-publish-prod card-text">Publishing and production: {book.publisher}</p>
-          <p className="card-text">Languege: {book.languege}, Pages: {book.pages}</p>
-          <p className="book-isbn card-text">ISBN - 978-86-341-1845-2; 978-86-341-0623-7</p>
-
+          <p className="card-text">Languege: {book.language}</p>
+          <p className="card-text">Pages: {book.pages}</p>
+          <p className="book-isbn card-text">{book.sibn}</p>
           <hr/>
           <p className="book-description card-text"><strong>Description:</strong> {book.description}</p>
         </div>

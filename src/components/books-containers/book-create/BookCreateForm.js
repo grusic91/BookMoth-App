@@ -36,8 +36,9 @@ const BookCreateForm = props => {
         options={options}
         className="form-control"
         name="edition"
-        component={BookSelectCategory}
+        component={InputField}
         label="Edition"
+        type="text"
       />
       <Field
         className="form-control"
