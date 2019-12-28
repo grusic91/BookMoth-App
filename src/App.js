@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
 import { configureStore } from 'store';
 import * as actions from "store/actions";
 
@@ -31,6 +32,7 @@ class App extends React.Component {
             style={{
               position: 'cover'
             }}>
+            <ToastContainer />
             <Header />
             <Main />
           </div>

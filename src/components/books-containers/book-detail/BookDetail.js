@@ -11,21 +11,20 @@ class BookDetail extends Component {
     this.props.dispatch(actions.fetchBookById(bookId));
   }
 
-  renderBookDetail(book) {
+  renderBookDetail(book, errors) {
     const { isUpdate } = this.props.location.state || false;
 
-    return isUpdate ? <BookDetailUpdate dispatch={this.props.dispatch} book={book} />
+    return isUpdate ? <BookDetailUpdate dispatch={this.props.dispatch} book={book} errors={errors} />
                     : <BookDetailInfo book={book} />
-
   }
 
   render() {
-    const book = this.props.book;
+    const { book, errors } = this.props;
 
     if (book._id) {
       return (
         <div id="book-detail-page">
-          {this.renderBookDetail(book)}
+          {this.renderBookDetail(book, errors)}
         </div>
       )
     } else {
@@ -36,7 +35,8 @@ class BookDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    book: state.book.data
+    book: state.book.data,
+    errors: state.book.errors
   }
 }
 

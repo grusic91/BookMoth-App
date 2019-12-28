@@ -34,6 +34,27 @@
       "category": "ep",
       "pages": 448,
       "description": "One of the greatest stories ever told, Iliad has survived for thousands of years because of its insightful portrayal of man and its epic story of war, duty, honor, and revenge."
+    },
+    {
+      "title": "Teharje - Krvave Arene",
+      "author": "Ivan Korošec",
+      "language": "Slovenščina",
+      "publisher": "Ilex-Impex, d.o.o. Ljubljana 1994",
+      "edition": "1st",
+      "category": "Roman - Zgodovinsko pričevanje",
+      "pages": 202,
+      "description": "Pričevanje dogajanja v partizanskem taborišču Teharje o nečloveškem ravanju z vojnimi ujetniki, civilisti in otroci. Odgovorni se niso nikoli opravičili ali sprejeli odgovornost.",
+      "isbn": "961-6118-02-1"
+    },
+    {
+      "title": "Ukradeno Otroštvo",
+      "author": "Ivan Ott",
+      "language": "Slovenščina",
+      "publisher": "Založba za alternativno teorijo Maribor 1991",
+      "edition": "1st",
+      "category": "Roman",
+      "pages": 302,
+      "description": "Zgodovinsko pričevanje povojnega nasilja nad begunci otroki s strani partizanov in komunističnega režima"
     }
   ],
   "users": [
