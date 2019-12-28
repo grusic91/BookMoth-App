@@ -8,7 +8,7 @@ export class BookList extends React.Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row d-flex justify-content-around">
         {this.renderBookCards()}
       </div>
     )

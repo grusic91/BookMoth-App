@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const BookDetailInfo = ({book}) => {
-  console.log(book);
 
   return (
   <div id="bookDetailInfo" className="mb-3" >

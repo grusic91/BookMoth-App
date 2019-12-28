@@ -8,26 +8,38 @@ export class EditableComponent extends React.Component {
       value: undefined,
       originValue: undefined
     }
-
     this.update = this.update.bind(this);
   }
 
   componentDidMount() {
-    const { entity, entityField } = this.props;
-    const value = entity[entityField];
+    this.setOriginValue();
+  }
+
+  componentDidUpdate() {
+    const {errors, entityField, resetErrors} = this.props;
+
+    if (errors && errors[entityField]) {
+      this.setOriginValue();
+      resetErrors();
+    }
+  }
+
+  setOriginValue() {
+    const {entityField, entity} = this.props;
 
     this.setState({
-      value,
-      originValue: value
+      value: entity[entityField],
+      originValue: entity[entityField],
+      isActive: false
     });
   }
 
   disableEdit() {
-    this.setState({isActive: false})
-
+    this.setState({isActive: false});
   }
+
   enableEdit() {
-    this.setState({isActive: true})
+    this.setState({isActive: true});
   }
 
   update() {
@@ -41,11 +53,7 @@ export class EditableComponent extends React.Component {
     }
   }
 
-
-
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({value: event.target.value});
   }
-
-
 }

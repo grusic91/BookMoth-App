@@ -1,4 +1,4 @@
-.navbar {
+#navbar {
   padding: 20px;
   margin-bottom: 40px;
 
@@ -10,10 +10,6 @@
     font-weight: 500;
   }
 
-  .nav-link {
-    color: $main-text-color;
-  }
-
   .nav-link:hover {
     color: $main-background;
     font-weight: bold;
@@ -21,14 +17,6 @@
     border-radius: 2px;
   }
 
-    .navbar-toggler {
-      padding: .25rem .75rem;
-      font-size: 1.25rem;
-      line-height: 1;
-      background-color: #c1292938;
-      border: 1px solid #b75f5f;
-      border-radius: .25rem;
-  }
   .show {
     background-color: white;
   }

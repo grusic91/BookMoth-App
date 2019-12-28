@@ -23,7 +23,8 @@ const Main = (props) => {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundImage: `url(${process.env.PUBLIC_URL} /img/homepage-background1.jpg)`,
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        zIndex: -1
       }}
       >
       <Switch>

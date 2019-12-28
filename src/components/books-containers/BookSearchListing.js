@@ -45,10 +45,11 @@ class BookSearchListing extends React.Component {
 
   render() {
     return (
-      <div className="bookSearchListing">
-        <div>
+      <div
+        className="container bookSearchListing "
+        style={{marginTop: 50}}>
         { this.renderTitle() }
-
+        <div className="d-flex justify-content-around">
         { !this.state.searchedBook ?
           <h2>LOADING...</h2>
         :
