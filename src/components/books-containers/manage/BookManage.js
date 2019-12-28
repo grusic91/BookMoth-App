@@ -1,7 +1,7 @@
 import React from 'react';
 import * as actions from 'store/actions';
 import { Link, withRouter } from 'react-router-dom';
-import { ToastContainer, toast} from 'react-toastify';
+import { toast} from 'react-toastify';
 import BookManageCard from './BookManageCard';
 
 class BookManage extends React.Component {
@@ -49,7 +49,6 @@ class BookManage extends React.Component {
     const {userBooks, isFetching} = this.state;
     return (
       <div id="book-manage-page" className="container">
-        <ToastContainer />
         <div className="row">
           { this.renderBookCards(userBooks) }
         </div>
