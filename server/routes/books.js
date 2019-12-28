@@ -15,6 +15,27 @@ router.get("/books/manage", authMiddleware, async function(req,res,next) {
   }
 })
 
+router.get("/books/:id/verify-user", authMiddleware, async function(req, res, next) {
+  try {
+    const user = res.locals.user;
+    let book = await Book
+      .findById(req.params.id)
+      .populate('user')
+      .exec(function(err, foundBook) {
+        if(err) {
+          return res.status(422).send({erros: err.errors})
+        }
+
+        if(!foundBook.users.includes(user.id)) {
+          return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not owner of this book!'}]})
+        }
+        return res.json({status: 'VERIFIED'})
+      })
+  } catch (err) {
+    return next(err);
+  }
+});
+
 /*GET - /api/books/:id*/
 // get books with specific id
 router.get("/books/:id", authMiddleware, async function(req, res, next) {
@@ -31,7 +52,7 @@ router.patch("/books/:id", authMiddleware, async function(req, res, next) {
   try {
     const bookData = req.body;
     const user = res.locals.user;
-    
+
     let foundBookById = await Book
       .findById(req.params.id)
       .populate('user', '_id')

@@ -15,6 +15,10 @@ import { FETCH_BOOKS_SUCCESS,
 
 const axiosInstance = axiosService.getInstance();
 
+export const varifyBookOwner = (bookId) => {
+    return axiosInstance.get(`/books/${bookId}/verify-user`);
+}
+
 // Action Creator FETCH_BOOKS from server
 const fetchBooksSuccess = books => {
   return {
