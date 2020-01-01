@@ -219,7 +219,7 @@ export const updateBook = (id, bookData) => dispatch => {
 }
 
 /*--UPLOAD IMAGE */
-export const uploadImage = (image) => {
+export const  uploadImage = (image) => {
   const formData = new FormData();
   // append image on formData
   formData.append('image', image);
@@ -229,5 +229,9 @@ export const uploadImage = (image) => {
     .then(json => {
       return json.data.image_url;
     })
-    .catch(({response}) => Promise.reject(response.data.errors[0]))
+    .catch(({response}) => {
+      console.log(response);
+      return Promise.reject(response.data.errors[0])}
+
+  )
 }
