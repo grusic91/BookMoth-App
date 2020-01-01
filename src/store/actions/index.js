@@ -230,8 +230,6 @@ export const  uploadImage = (image) => {
       return json.data.image_url;
     })
     .catch(({response}) => {
-      console.log(response);
       return Promise.reject(response.data.errors[0])}
-
   )
 }
