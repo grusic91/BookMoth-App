@@ -12,7 +12,7 @@ class AxiosService {
   initInsatnce() {
     this.axiosInstance = axios.create({
       baseURL: '/api',
-      timeout: 1000
+      timeout: 10000
     });
 
 
