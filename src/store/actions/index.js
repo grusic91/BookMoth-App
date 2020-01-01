@@ -217,3 +217,17 @@ export const updateBook = (id, bookData) => dispatch => {
       dispatch(updateBookFail(response.data.erros))
     })
 }
+
+/*--UPLOAD IMAGE */
+export const uploadImage = (image) => {
+  const formData = new FormData();
+  // append image on formData
+  formData.append('image', image);
+
+  // make request on server
+  return axiosInstance.post('/image-upload', formData)
+    .then(json => {
+      return json.data.image_url;
+    })
+    .catch(({response}) => Promise.reject(response.data.errors[0]))
+}

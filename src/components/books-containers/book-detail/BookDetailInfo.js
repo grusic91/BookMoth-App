@@ -2,11 +2,17 @@ import React from 'react';
 
 export const BookDetailInfo = ({book}) => {
 
+  let renderImg = () => {
+    if (book.image_url) {
+      return book.image_url;
+    } else { return `${process.env.PUBLIC_URL} /img/homepage-background.jpg`}
+  }
+
   return (
   <div id="bookDetailInfo" className="mb-3" >
     <div className="row no-gutters">
       <div className="col-md-4">
-        <img src={`${process.env.PUBLIC_URL} /img/homepage-background.jpg`} className="card-img" alt="..." />
+        <img src={renderImg()} className="card-img" alt="..." />
       </div>
       <div className="col-md-8">
         <div className="card-body">

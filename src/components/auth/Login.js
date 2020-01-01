@@ -49,7 +49,7 @@ class Login extends React.Component {
                      }}
               >
                 <div className="form-img-text">
-                  <p>Wellcome back, let's log in and discover your shelve!</p>
+                  <p>Welcome back, let's log in and discover your shelve!</p>
                 </div>
               </div>
             </div>

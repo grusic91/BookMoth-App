@@ -39,7 +39,7 @@ class BookManageCard extends React.Component {
               !wantDelete &&
               <React.Fragment>
                 <button onClick={this.showDeleteMenue} className="btn btn-danger">Delete</button>
-                <Link to={{pathname: `/books/${book._id}`, state: { isUpdate: true}}}
+                <Link to={{pathname: `/books/${book._id}/edit`, state: { isUpdate: true}}}
                       className="btn btn-primary">Update</Link>
               </React.Fragment>
 

@@ -3,4 +3,58 @@
     margin-left: 10px;
     font-size: 20px;
   }
+
+}
+
+.image-upload-container {
+  margin-bottom: 20px;
+  position: relative;
+
+  .img-preview-container {
+    background-color: grey;
+
+    .img-upload {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    .img-preview {
+      background: center center no-repeat;
+      background-size: contain;
+      height: 116px;
+      width: 116px;
+    }
+  }
+}
+
+.btn-editable-image {
+  margin: 10px;
+}
+
+/*Spinner loading*/
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  position: absolute;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
