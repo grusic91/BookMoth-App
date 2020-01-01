@@ -1,7 +1,7 @@
 import React from 'react';
 import BookCreateForm from './BookCreateForm';
 import { Redirect } from 'react-router-dom';
-import * as actions from "store/actions";
+import * as actions from 'store/actions';
 
 class BookCreate extends React.Component {
   constructor() {

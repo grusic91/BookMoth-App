@@ -14,7 +14,7 @@ const bookSchema = new Schema({
   pages: {type: Number },
   description: { type: String, required: true},
   cratedAt: { type: Date, default: Date.now },
-  image_url: {type: String},
+  image_url: {type: String, default: "https://via.placeholder.com/350x250"},
   isbn: {type: String, default: ""},
   users: [{ type: Schema.Types.ObjectId, ref: "User"}]
 });

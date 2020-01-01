@@ -9,6 +9,7 @@ const Book = require('./models/book');
 
 const authRoutes = require('./routes/auth');
 const booksRoutes = require('./routes/books');
+const imageUploadRoutes = require('./routes/image-upload');
 
 const path = require('path');
 
@@ -27,7 +28,7 @@ mongoose.connect(config.DB_URI, {
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
       fakeDb = new FakeDb();
-       // fakeDb.seedDb()
+       //fakeDb.seedDb()
     }
   });
 
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 // Routes come here
 app.use("/api/auth", authRoutes);
 app.use("/api", booksRoutes);
+app.use("/api", imageUploadRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   const appPath = path.join(__dirname, '..', 'build')

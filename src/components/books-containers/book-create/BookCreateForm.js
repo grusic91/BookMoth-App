@@ -78,7 +78,7 @@ const BookCreateForm = props => {
         type="text"
       />
       <Field
-        name="bookImgUrl"
+        name="image_url"
         component={BookFileUpload}
         label="Image URL"
       />

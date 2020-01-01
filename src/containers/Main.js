@@ -8,6 +8,7 @@ import BookCreate from "components/books-containers/book-create/BookCreate";
 import BookManage from "components/books-containers/manage/BookManage";
 import BookSearchListing from "components/books-containers/BookSearchListing";
 import BookDetail from "components/books-containers/book-detail/BookDetail";
+import BookUpdate from "components/books-containers/book-detail/BookUpdate";
 import Register from "components/auth/Register";
 import Login from "components/auth/Login";
 
@@ -34,6 +35,7 @@ const Main = (props) => {
         <ProtectedRoute exact path="/books/manage" component={BookManage} />
         <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>
         <ProtectedRoute exact path="/books/:id" component={BookDetail}/>
+        <ProtectedRoute exact path="/books/:id/edit" component={BookUpdate}/>
         <LoggedInRoute exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
       </Switch>

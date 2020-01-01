@@ -114,10 +114,10 @@ router.get("/books",  async function(req, res, next) {
 /* CREATE A BOOK */
 router.post("/books", authMiddleware, async function(req, res, next) {
   try {
-    const { title, author, languege, publisher, category, pages, description, image_url } = req.body;
+    const { title, author, language, edition, publisher, category, pages, description, image_url, isbn } = req.body;
     const user = res.locals.user;
 
-    const book = new Book({title, author, languege, publisher, category, pages, description, image_url});
+    const book = new Book({title, author, language, edition, publisher, category, pages, description, image_url, isbn});
     book.users = user;
 
     Book.create(book, function(err, newBook) {
