@@ -113,12 +113,10 @@ export class BookFileUpload extends React.Component {
 
     if(croppedImageBlob) {
       this.setState({pending: true, status: 'INIT'});
-      
+
       actions.uploadImage(croppedImageBlob).then(
         (uploadedImage) => { this.onSuccess(uploadedImage)},
-        (error) => {
-          console.log(error);
-          this.onError(error)}
+        (error) => {this.onError(error)}
       )
     }
   }
