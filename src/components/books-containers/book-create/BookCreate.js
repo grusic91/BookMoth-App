@@ -30,7 +30,7 @@ class BookCreate extends React.Component {
       <div className="container" id="newBook">
         <div className="row">
           <div className="col-md-2"></div>
-          <div className="col-lg-8">
+          <div className="col-lg-12">
             <div className="row form-box">
               <div className="col-md-6">
                 <div className="form-title">Create Book</div>
