@@ -11,10 +11,10 @@ export const BookDetailInfo = ({book}) => {
   return (
   <div id="bookDetailInfo" className="mb-3" >
     <div className="row no-gutters">
-      <div className="col-md-4">
+      <div className="col-sm-4">
         <img src={renderImg()} className="card-img" alt="..." />
       </div>
-      <div className="col-md-8">
+      <div className="col-sm-8">
         <div className="card-body">
           <h3 className="book-title card-title">{book.title}</h3>
           <h4 className="book-author">{book.author}</h4>

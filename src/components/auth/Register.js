@@ -37,7 +37,7 @@ class Register extends React.Component {
       <div id="register-page" className="container">
         <div className="row">
           <div className="col-md-2"></div>
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <div className="row form-box">
               <div className="col-md-6">
                 <div className="form-title">Registration Form - Sign up</div>

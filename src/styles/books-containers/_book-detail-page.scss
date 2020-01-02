@@ -1,6 +1,7 @@
 #book-detail-page {
-  margin-top: 80px;
-  background-color: silver;
+  margin-top: 18px;
+  margin-bottom: 80px;
+  background-color: #e6e7f5;
 
   .book {
     &-title {
@@ -26,5 +27,25 @@
   }
   .card-text {
     padding: 6px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  #book-detail-page {
+    margin-top: 14px;
+    .book {
+      &-title {
+        font-size: 1.65rem;
+      }
+      &-author {
+        font-size: 1.35em;
+      }
+      &-description {
+        font-size: .95rem;
+      }
+    }
+    .card-text {
+      padding: 6px 12px;
+    }
   }
 }

@@ -14,7 +14,7 @@ export const BookCard = ({book}) => {
   }
 
   return (
-    <div className="card" style={{width: "16rem"}}>
+    <div className="card">
       <img src={renderImg()} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="book-title card-title">{book.title}</h5>
