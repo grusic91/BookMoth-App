@@ -17,29 +17,93 @@
   #navbar .show {
     background-color: white; }
 
-.jumbotron {
-  background-color: transparent !important; }
-
+/*Homepage Component*/
 .homepage {
-  padding: 1.5rem;
+  padding: 4rem;
   font-family: Roboto; }
   .homepage .home-content {
     color: #07192b;
     text-shadow: 0 0 8px #c1b2aa;
     margin: 0 auto;
-    text-align: left; }
+    text-align: left;
+    background-color: transparent; }
 
 .homepage-text {
   font-size: 1.25rem; }
 
+/*Display for mobile device*/
 @media (max-width: 576px) {
-  h1 {
-    font-size: 2rem !important; }
-  .container-fluid {
-    padding: 0px !important;
-    margin: 0px !important; }
+  .display-6 {
+    font-size: 2rem; }
   .homepage-text {
     font-size: 1rem; } }
+
+/*Login Component*/
+#login-page {
+  margin-top: 50px; }
+  #login-page #success-alert {
+    margin-top: 100px; }
+  #login-page-title {
+    margin-bottom: 50px;
+    font-size: 27px;
+    padding-top: 20px;
+    text-decoration: underline; }
+  #login-page-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0; }
+  #login-page-img-text {
+    padding: 35% 20px 35% 20px;
+    background-color: #07192b;
+    opacity: 0.5;
+    color: white;
+    text-align: center; }
+
+/*loginForm*/
+#login-form .form-success {
+  background-color: #07192b;
+  border-color: #07192b;
+  margin-bottom: 30px; }
+
+#login-form .form-success:hover {
+  background-color: #eb6e34; }
+
+/*Register Component*/
+#register-page {
+  margin-bottom: 50px; }
+
+.form-box {
+  margin-top: 20px;
+  box-shadow: -1px 1px 50px 10px black; }
+
+.form-title {
+  margin-bottom: 50px;
+  font-size: 27px;
+  padding-top: 20px;
+  text-decoration: underline; }
+
+.form-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0; }
+
+.form-img-text {
+  padding: 35% 20px 35% 20px;
+  background-color: #07192b;
+  opacity: 0.5;
+  color: white;
+  text-align: center; }
+
+/*Register Form*/
+#register-form .form-success {
+  background-color: #07192b;
+  border-color: #07192b;
+  margin-bottom: 30px; }
+
+#register-form .form-success:hover {
+  background-color: #eb6e34; }
 
 #books-listing-page .card:hover {
   box-shadow: -1px 9px 40px -12px #4b4b4b;
@@ -71,7 +135,7 @@
     margin-bottom: 20px; }
 
 #book-detail-page {
-  margin-top: 18px;
+  margin-top: 50px;
   margin-bottom: 80px;
   background-color: #e6e7f5; }
   #book-detail-page .book-title {
@@ -152,33 +216,7 @@
   100% {
     transform: rotate(360deg); } }
 
-/*Style for Forms*/
-#register-page {
-  margin-bottom: 50px; }
-
-.form-box {
-  margin-top: 20px;
-  box-shadow: -1px 1px 50px 10px black; }
-
-.form-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 !important; }
-
-.form-title {
-  margin-bottom: 50px;
-  font-size: 27px;
-  padding-top: 20px;
-  text-decoration: underline; }
-
-.form-img-text {
-  padding: 35% 20px 35% 20px;
-  background-color: #07192b;
-  opacity: 0.5;
-  color: white;
-  text-align: center; }
-
+/*Other form elements*/
 .textarea {
   border: 2px solid black; }
 
@@ -187,22 +225,11 @@
   color: #07192b;
   font-weight: bold; }
 
-.btn-success {
-  background-color: #07192b !important;
-  border-color: #07192b !important;
-  margin-bottom: 30px !important; }
-
-.btn-success:hover {
-  background-color: #eb6e34 !important; }
-
-#success-alert {
-  margin-top: 100px; }
-
 html {
   min-height: 100%; }
 
-body {
-  position: fixed;
+body > #root > .App > #main-page {
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
@@ -222,7 +249,7 @@ h1 {
   padding: 1.5rem;
   font-family: Roboto;
   overflow: auto;
-  height: -webkit-fill-available !important; }
+  height: -webkit-fill-available; }
 
 .card > .card-body > .card-title {
   text-transform: capitalize;
@@ -232,11 +259,8 @@ h1 {
 
 @media (max-width: 480px) {
   .container {
-    padding: 15px !important; } }
+    padding: 15px; } }
 
 @media (max-width: 480px) {
   .component-container {
     padding: 0rem; } }
-
-.App {
-  min-height: 100%; }

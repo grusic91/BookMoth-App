@@ -1,35 +1,4 @@
-/*Style for Forms*/
-
-#register-page {
-  margin-bottom: 50px;
-}
-
-.form-box {
-  margin-top: 20px;
-  box-shadow: -1px 1px 50px 10px black;
-}
-
-.form-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 !important;
-}
-
-.form-title {
-  margin-bottom: 50px;
-  font-size: 27px;
-  padding-top: 20px;
-  text-decoration: underline;
-}
-
-.form-img-text {
-  padding: 35% 20px 35% 20px;
-  background-color: $main-homepage-color;
-  opacity: 0.5;
-  color: white;
-  text-align: center;
-}
+/*Other form elements*/
 
 .textarea {
   border: 2px solid black;
@@ -39,18 +8,4 @@
   font-size: 19px;
   color: $main-homepage-color;
   font-weight: bold;
-}
-
-.btn-success {
-  background-color: $main-homepage-color !important;
-  border-color: $main-homepage-color !important;
-  margin-bottom: 30px !important;
-}
-
-.btn-success:hover {
-  background-color:  $main-background !important;
-}
-
-#success-alert {
-  margin-top: 100px;
 }

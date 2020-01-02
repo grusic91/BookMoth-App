@@ -1,9 +1,6 @@
-.jumbotron {
-  background-color: transparent !important;
-}
-
+/*Homepage Component*/
 .homepage {
-  padding: 1.5rem;
+  padding: 4rem;
   font-family: $main-font-family;
 
   .home-content {
@@ -11,6 +8,7 @@
     text-shadow: 0 0 8px #c1b2aa;
     margin: 0 auto;
     text-align: left;
+    background-color: transparent;
   }
 }
 
@@ -18,15 +16,10 @@
   font-size: 1.25rem;
 }
 
+/*Display for mobile device*/
 @media (max-width: 576px) {
-
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  .container-fluid {
-    padding: 0px !important;
-    margin: 0px !important;
+  .display-6 {
+    font-size: 2rem;
   }
 
   .homepage-text {

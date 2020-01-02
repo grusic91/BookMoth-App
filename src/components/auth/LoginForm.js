@@ -9,7 +9,7 @@ const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
 
   return (
-    <form onSubmit={handleSubmit(submitCb)}>
+    <form id="login-form" onSubmit={handleSubmit(submitCb)}>
       <Field
         className="form-control"
         name="email"
@@ -26,7 +26,7 @@ const LoginForm = props => {
         type="password"
         valdiate={[required]}
       />
-      <button className="btn btn-success fomr-control"
+    <button className="form-success btn btn-success fomr-control"
           type="submit"
           disabled={!valid || pristine || submitting}>
         Login

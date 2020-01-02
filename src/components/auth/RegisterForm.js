@@ -7,7 +7,7 @@ const RegisterForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
 
   return (
-    <form onSubmit={handleSubmit(submitCb)}>
+    <form id="register-form" onSubmit={handleSubmit(submitCb)}>
       <Field
         className="form-control"
         name="username"
@@ -43,7 +43,7 @@ const RegisterForm = props => {
         label="Image URL"
         type="text"
       />
-      <button className="btn btn-success fomr-control"
+    <button className="form-success btn btn-success fomr-control"
           type="submit"
           disabled={!valid || pristine || submitting}>
         Register

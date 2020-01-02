@@ -6,7 +6,7 @@ const Homepage = () => {
   <div className="homepage container-fluid">
     <div className="home-content row jumbotron">
       <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-        <h1 className="display-6">New to BookMoth page?</h1>
+        <h1 className="display-6">BookMoth page (!Still in progress!)</h1>
         <p className="lead">Register now and start making your own Library.</p>
       </div>
       <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">

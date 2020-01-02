@@ -1,0 +1,43 @@
+/*Login Component*/
+
+#login-page {
+  margin-top: 50px;
+
+  #success-alert {
+    margin-top: 100px;
+  }
+
+  &-title {
+    margin-bottom: 50px;
+    font-size: 27px;
+    padding-top: 20px;
+    text-decoration: underline;
+  }
+
+  &-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+
+  &-img-text {
+    padding: 35% 20px 35% 20px;
+    background-color: $main-homepage-color;
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+  }
+}
+
+/*loginForm*/
+#login-form {
+  .form-success {
+    background-color: $main-homepage-color ;
+    border-color: $main-homepage-color ;
+    margin-bottom: 30px ;
+  }
+  .form-success:hover {
+    background-color:  $main-background ;
+  }
+}
