@@ -43,9 +43,15 @@ h1 {
   font-weight: bold;
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0px !important;
+  }
+}
+
 
 @media (max-width: 480px) {
   .component-container {
-    padding: .5rem;
+    padding: 0rem;
   }
 }

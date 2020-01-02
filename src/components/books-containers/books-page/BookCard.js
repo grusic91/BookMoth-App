@@ -15,6 +15,7 @@ export const BookCard = ({book}) => {
 
   return (
     <div className="card">
+
       <img src={renderImg()} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="book-title card-title">{book.title}</h5>
@@ -23,6 +24,7 @@ export const BookCard = ({book}) => {
         <p className="card-text">{trimmedDescription}</p>
         <Link to={`/books/${book._id}`} className="btn btn-primary">More details</Link>
       </div>
+      
     </div>
   )
 }
