@@ -45,8 +45,9 @@ exports.register = async function(req, res, next) {
 /* Login or Authenticate*/
 exports.auth = async function(req, res, next) {
   try {
+    const { email, password } = req.body;
     // check if there are user and password
-    if (!req.body.password || !req.body.email) {
+    if (!password || !email) {
       return missingUsersInput(res);
     }
     // find user in DB by email

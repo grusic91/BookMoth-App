@@ -8,6 +8,15 @@ import { ResErrors} from '../shared/form/ResErrors';
 const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
 
+  const renderError = (errors) => {
+    if (errors !== [] && 'error' in errors) {
+      return <ResErrors errors={errors} />
+    }
+    if ('errors' in errors) {
+      return <ResErrors errors={errors} />
+    }
+  }
+
   return (
     <form id="login-form" onSubmit={handleSubmit(submitCb)}>
       <Field
@@ -32,7 +41,7 @@ const LoginForm = props => {
         Login
       </button>
       {
-        errors.length > 0 && <ResErrors errors={errors} />
+       renderError(errors)
       }
     </form>
   )

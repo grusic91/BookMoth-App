@@ -1,7 +1,4 @@
-import {
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  LOGOUT } from "../actionTypes";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "../actionTypes";
 
 const INITIAL_STATE = {
   isAuth: false,

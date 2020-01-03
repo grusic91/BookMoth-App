@@ -8,7 +8,7 @@ class Register extends React.Component {
     super(props);
 
     this.state = {
-      errors: "",
+      errors: {},
       redirect: false
     }
     this.registerUser = this.registerUser.bind(this);
@@ -29,7 +29,7 @@ class Register extends React.Component {
 
   render () {
     const { errors, redirect } = this.state;
-    if(redirect) {
+      if(redirect) {
       return <Redirect to={{pathname: '/login', state: { successRegister: true }}} />
     }
 
