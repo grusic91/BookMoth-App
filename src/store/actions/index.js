@@ -173,8 +173,8 @@ export const login = (userData) => {
       authService.saveToken(token);
       dispatch(loginSuccess(token));
     })
-    .catch((err) => {
-      dispatch(loginFailure(err.response.data.error.message));
+    .catch(({response}) => {
+        dispatch(loginFailure(response.data));
     })
   }
 }
