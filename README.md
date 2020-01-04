@@ -1,5 +1,5 @@
 # BookMoth-App
-BookMoth-App is web app made with JavaScript, React, Redux, MongoDb, Node.js. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection. [Open app](https://bookmoth-react.herokuapp.com/)
+BookMoth-App is web app made with **JavaScript, React, Redux, MongoDb, Node.js**. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection. [Open app](https://bookmoth-react.herokuapp.com/)
 
 ___
 
@@ -11,17 +11,17 @@ ___
 ## Technologies
 This is the list of technologies that I use in project:
 
-* JavaScript
-* ReactJs - Application is bootstrapped with **creat-react-app**
-* Redux - managing application state.
-* axios - Promise based HTTP client for the browser and node.js
-* MongoDB - database, host in the cloud with MongoDB Atlas,
-* mongoose - MongoDB object modeling tool designed to work in an asynchronous environment with Node.js.
-* Node.js and Express - for backend api routes
-* AWS S3 - uploading images in bucket
-* bootstrap - styles
-* SCSS - styles
-* heroku - hosting application.
+* **JavaScript**
+* **ReactJs** - Application is bootstrapped with **creat-react-app**
+* **Redux** - managing application state.
+* **axios** - Promise based HTTP client for the browser and node.js
+* **MongoDB** - database, host in the cloud with **MongoDB Atlas**,
+* **mongoose** - MongoDB object modeling tool designed to work in an asynchronous environment with Node.js.
+* **Node.js and Express** - for backend api routes
+* **AWS S3** - uploading images in bucket
+* **bootstrap** - styles
+* **SCSS** - styles
+* **heroku** - hosting application.
 
 ___
 
