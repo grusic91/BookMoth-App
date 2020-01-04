@@ -2,18 +2,18 @@ import React from "react";
 import { Switch, Route, withRouter} from "react-router-dom";
 
 //import components
-import Homepage from "components/Homepage";
-import BookListing from "components/books-containers/books-page/BookListing";
-import BookCreate from "components/books-containers/book-create/BookCreate";
-import BookManage from "components/books-containers/manage/BookManage";
-import BookSearchListing from "components/books-containers/BookSearchListing";
-import BookDetail from "components/books-containers/book-detail/BookDetail";
-import BookUpdate from "components/books-containers/book-detail/BookUpdate";
-import Register from "components/auth/Register";
-import Login from "components/auth/Login";
+import Homepage from "./Homepage";
+import BookListing from "./books-containers/books-page/BookListing";
+import BookCreate from "./books-containers/book-create/BookCreate";
+import BookManage from "./books-containers/manage/BookManage";
+import BookSearchListing from "./books-containers/BookSearchListing";
+import BookDetail from "./books-containers/book-detail/BookDetail";
+import BookUpdate from "./books-containers/book-detail/BookUpdate";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
 
-import { ProtectedRoute } from "components/shared/authRoutes/ProtectedRoute";
-import { LoggedInRoute } from "components/shared/authRoutes/LoggedInRoute";
+import { ProtectedRoute } from "./shared/authRoutes/ProtectedRoute";
+import { LoggedInRoute } from "./shared/authRoutes/LoggedInRoute";
 
 const Main = (props) => {
   return (

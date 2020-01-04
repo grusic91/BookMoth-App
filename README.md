@@ -1,41 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BookMoth-App
+BookMoth-App is web app made with JavaScript, React, Redux, MongoDb, Node.js. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection.
 
-## to start working on Dev Server
-npm run start-dev
+___
 
-## to start production
-npm start
+## Motivation
+At first I chose this project because I wanted to solve problems with keeping track of my books collection. Second thing is, that I wanted to make something that I can show as project for Portfolio as Web Developer, and that  will not be just a bunch of short algorythm's programs but something usefull. The project was growing and also my knowledge of programming, debugging, testing and using a lot different of technologies.
 
-## Instaled packages for styles:
-* Bootstrap (CSS framework)
-###  * `npm install bootstrap`
-For proper functionality of bootstrap install also this two packages below
-###  * `npm install jquery`
-###  * `npm install popper.js`
-* SCSS:
-### * `npm install node-sass-chokidar`
-### * `npm install npm-run-all` (A CLI tool to run multiple npm-scripts in parallel or sequential.)
+___
 
-# Backend
-## Insatled packages for seting Mongo DB
-#### * if you don't have node also install `npm install node`
-#### * `npm install express`
-#### * `npm install mongoose`
-#### * `npm install body-parser`
-#### * `npm install mongoose`
+## Technologies
+This is the list of technologies that I use in project:
 
+* JavaScript
+* ReactJs - Application is bootstrapped with **creat-react-app**
+* Redux - managing application state.
+* axios - Promise based HTTP client for the browser and node.js
+* MongoDB - database, host in the cloud with MongoDB Atlas,
+* mongoose - MongoDB object modeling tool designed to work in an asynchronous environment with Node.js.
+* Node.js and Express - for backend api routes
+* AWS S3 - uploading images in bucket
+* bootstrap - styles
+* SCSS - styles
+* heroku - hosting application.
 
-# Frontend
-## Install packages
-#### * `npm install axios` for ajax requests
-#### * `npm install redux`
-#### * `npm install redux-thunk`
-#### * `npm install react-redux`
-#### * `npm install react-router-dom`
-#### * `npm install http-proxy-middleware` fro cros origin access
-#### * `npm install moment`
+___
 
+## Get started
 
+* If you just want check the app click on [Open app](https://bookmoth-react.herokuapp.com/)
+
+### Run application on local machine
+
+1. If you don't have pre-installed install:
+      - NodeJs from https://nodejs.org/en/
+      - git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+2. Go to terminal and create or/and navigate to folder where you want to initialize project
+3. clone or download zip
+      - copy link provided from clone or download button
+      - run command in terminal: `git clone <coppied_link>`
+      - install npm: `npm install` to get node_modules installed
+4. Run app on localhost: `npm run start-dev` and application will run on localhost:3000
+
+If you want to use and manipulate with data from MongoDB, you should create your own Atlas MongoDB account and AWS account, and porivde credentials in folder: `server/config/`, where you need to create folder `dev.js` and provide credentials there like:
+
+```
+module.exports = {
+  DB_URI: "your mongo db uri from Atlas",
+  SECRET_KEY: "your secret key from atlas",
+  AWS_ACCESS_KEY_ID: "your access keyId from AWS",
+  AWS_SECRET_KEY: "your secret key from AWS"
+}
+```
+---
 ## Folder structure in /src
 
 #### /componetns - folder for react components that are not directly connected to redux state
@@ -44,12 +60,12 @@ For proper functionality of bootstrap install also this two packages below
 #### /services - logic that relates to communicate with API
 #### /store - redux related logic
 
-
+---
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start-dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -60,7 +76,7 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information. Currently the project doesn't contain any tests
 
 ### `npm run build`
 
@@ -81,33 +97,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

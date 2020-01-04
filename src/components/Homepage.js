@@ -23,9 +23,9 @@ const Homepage = () => {
             <p className="homepage-text">
               Everyone has at home a lot of books.
               <strong> BookMoth</strong> is <strong>Free Web Application</strong> page,
-              where you can store data of your books at home. It is like database for your home phisical
+              where you can store data of your physical books collection. It is like database for your home phisical
               Library! By using this application you will have a list of your books
-              <strong> always in your hand!</strong>
+              <strong> always at hand.</strong>
             </p>
           </div>
         </div>
