@@ -1,5 +1,5 @@
 # BookMoth-App
-BookMoth-App is web app made with JavaScript, React, Redux, MongoDb, Node.js. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection.
+BookMoth-App is web app made with JavaScript, React, Redux, MongoDb, Node.js. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection. [Open app](https://bookmoth-react.herokuapp.com/)
 
 ___
 
@@ -32,14 +32,19 @@ ___
 ### Run application on local machine
 
 1. If you don't have pre-installed install:
+
       - NodeJs from https://nodejs.org/en/
       - git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-2. Go to terminal and create or/and navigate to folder where you want to initialize project
+
+2. Go to terminal and create or/and navigate to folder where you want to initialize project<br />
+
 3. clone or download zip
+
       - copy link provided from clone or download button
       - run command in terminal: `git clone <coppied_link>`
-      - install npm: `npm install` to get node_modules installed
-4. Run app on localhost: `npm run start-dev` and application will run on localhost:3000
+      - install npm: `npm install` to get node_modules installed<br />
+
+4. Run app on localhost: `npm run start-dev` and application will run on **localhost:3000**<br />
 
 If you want to use and manipulate with data from MongoDB, you should create your own Atlas MongoDB account and AWS account, and porivde credentials in folder: `server/config/`, where you need to create folder `dev.js` and provide credentials there like:
 
@@ -52,13 +57,13 @@ module.exports = {
 }
 ```
 ---
-## Folder structure in /src
+## Folder structure for front-end in /src
 
 #### /componetns - folder for react components that are not directly connected to redux state
-#### /containers - folder for react components that are directly connected to redux state
-#### /hocs - higher order components
 #### /services - logic that relates to communicate with API
 #### /store - redux related logic
+
+## Folder structure for back-end in /server
 
 ---
 ## Available Scripts
