@@ -59,22 +59,21 @@ module.exports = {
 ---
 ## Folder structure for front-end in /src
 
-#### /componetns - folder for react components
-#### /store - redux related logic
-#### /store/services - axios and auth services
-#### /store/services - logic that relates to communicate with API
-#### /styles - all styles files are here <br />
+* **/componetns** - folder for react components
+* **/store** - redux related logic
+* **/store/services** - axios and auth services
+* **/store/services** - auth logic that relates to communicate with API
+* **/styles** - all styles files are here <br />
 
 
 ## Folder structure for back-end in /server
-#### /index.js - core of backend, connect with Node, mongodb
-#### /services - handle acces to aws s3 bucket
-#### /routes - api requests are handled here
-#### /routes - api requests are handled here
-#### /models - models, mongoose schemas, for mongodb
-#### /handler - error authMiddleware handler for connection error
-#### /controllers - auth controllers, handle registration, login and authMiddleware
-#### /config - credentials
+* **/index.js** - core of backend, connect with Node, mongodb
+* **/services** - handle acces to aws s3 bucket
+* **/routes** - api requests are handled here
+* **/models** - models, mongoose schemas, for mongodb
+* **/handler** - error authMiddleware handler for connection error
+* **/controllers** - auth controllers, handle registration, login and authMiddleware
+* **/config** - credentials
 ---
 ## Available Scripts
 
