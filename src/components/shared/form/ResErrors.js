@@ -2,8 +2,9 @@ import React from "react";
 
 export function ResErrors(props) {
   const errors = props.errors;
-
+  
   const renderError = (errors) => {
+
     /* get from register error*/
     if (errors.length > 0) {
       return errors

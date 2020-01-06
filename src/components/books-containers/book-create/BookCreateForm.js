@@ -94,6 +94,7 @@ const BookCreateForm = props => {
         Submit
       </button>
       { /*Displaying errors from response*/
+        Object.entries(errors).length !== 0 &&
         <ResErrors errors={errors} />
       }
     </form>
