@@ -67,7 +67,7 @@ module.exports = {
 
 
 ## Folder structure for back-end in /server
-* **/index.js** - core of backend, connect with Node, mongodb
+* **/index.js** - core of backend, respnsible to start server
 * **/services** - handle acces to aws s3 bucket
 * **/routes** - api requests are handled here
 * **/models** - models, mongoose schemas, for mongodb

@@ -105,9 +105,11 @@
 #register-form .form-success:hover {
   background-color: #eb6e34; }
 
-#books-listing-page .card:hover {
-  box-shadow: -1px 9px 40px -12px #4b4b4b;
-  opacity: .9; }
+#books-listing-page {
+  margin-top: 60px; }
+  #books-listing-page .card:hover {
+    box-shadow: -1px 9px 40px -12px #4b4b4b;
+    opacity: .9; }
 
 @media (min-width: 576px) {
   .card-columns {
@@ -225,15 +227,26 @@
   color: #07192b;
   font-weight: bold; }
 
-html {
-  min-height: 100%; }
+body {
+  margin: 0;
+  background-color: red; }
 
-body > #root > .App > #main-page {
+#main-page {
+  width: 100vw;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0; }
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -1;
+  text-align: center;
+  padding: 1rem;
+  background-position: center center;
+  background-size: cover;
+  text-shadow: 0 0 8px #c1b2aa; }
 
 h1 {
   font-family: Open Sans;

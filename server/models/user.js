@@ -56,8 +56,8 @@ userSchema.pre("save", async function(next) {
 // COMPARE PASSWORD add method to the userSchema
 userSchema.methods.comparePassword = async function(candidatePassword, next) {
   try {
-    let isMatch = await  bcrypt.compare(candidatePassword, this.password);
-    return isMatch;
+    let isMatch = await bcrypt.compare(candidatePassword, this.password);
+    return isMatch; // returns true if success
   } catch (err) {
     return next(err);
   }

@@ -9,7 +9,7 @@ class BookCreate extends React.Component {
     this.bookCategories = ['novel', 'poem', 'history-novel']
 
     this.state = {
-      errors: "",
+      errors: {},
       redirect: false
     }
     this.createNewBook = this.createNewBook.bind(this);

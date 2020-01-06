@@ -10,14 +10,29 @@
 @import 'books-containers/_book-search-list.scss';
 @import 'form/forms.scss';
 
-html {min-height: 100%; }
 
-body >#root >.App > #main-page {
+body {
+  margin: 0;
+  background-color: red;
+}
+
+#main-page {
+  width: 100vw;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  z-index: -1;
+  text-align: center;
+  padding: 1rem;
+  background-position: center center;
+  background-size: cover;
+  text-shadow: 0 0 8px #c1b2aa;
 }
 
 h1 {
