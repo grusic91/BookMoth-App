@@ -34,7 +34,7 @@ const Main = (props) => {
         <ProtectedRoute exact path="/books/new" component={BookCreate}/>
         <ProtectedRoute exact path="/books/manage" component={BookManage} />
         <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>
-        <ProtectedRoute exact path="/books/:id" component={BookDetail}/>
+        <Route exact path="/books/:id" component={BookDetail}/>
         <ProtectedRoute exact path="/books/:id/edit" component={BookUpdate}/>
         <LoggedInRoute exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />

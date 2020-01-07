@@ -228,8 +228,7 @@
   font-weight: bold; }
 
 body {
-  margin: 0;
-  background-color: red; }
+  margin: 0; }
 
 #main-page {
   width: 100vw;
@@ -245,8 +244,7 @@ body {
   text-align: center;
   padding: 1rem;
   background-position: center center;
-  background-size: cover;
-  text-shadow: 0 0 8px #c1b2aa; }
+  background-size: cover; }
 
 h1 {
   font-family: Open Sans;

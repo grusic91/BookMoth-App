@@ -6,7 +6,6 @@ import * as actions from 'store/actions';
 class BookDetail extends Component {
 
   componentDidMount() {
-
     const bookId = this.props.match.params.id;
     this.props.dispatch(actions.fetchBookById(bookId));
   }

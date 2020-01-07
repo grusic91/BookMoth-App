@@ -13,7 +13,6 @@
 
 body {
   margin: 0;
-  background-color: red;
 }
 
 #main-page {
@@ -26,13 +25,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   z-index: -1;
   text-align: center;
   padding: 1rem;
   background-position: center center;
   background-size: cover;
-  text-shadow: 0 0 8px #c1b2aa;
 }
 
 h1 {

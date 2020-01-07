@@ -38,7 +38,7 @@ router.get("/books/:id/verify-user", authMiddleware, async function(req, res, ne
 
 /*GET - /api/books/:id*/
 // get books with specific id
-router.get("/books/:id", authMiddleware, async function(req, res, next) {
+router.get("/books/:id", async function(req, res, next) {
   try {
     let book = await Book.findById(req.params.id);
     return res.status(200).json(book);

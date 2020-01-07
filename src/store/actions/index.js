@@ -79,16 +79,13 @@ export const fetchBooks = (title) => {
 export const fetchBookById = (bookId) => {
   /*bookId get from URL set in BookDetail*/
   // GET book from DB finded by ID
-  return dispatch => {
+  return function(dispatch) {
     dispatch(fetchBookByIdInit());
 
-    axiosInstance.get(`/books/${bookId}`)
-      .then(res => {
-        return dispatch(fetchBookByIdSuccess(res.data))
-      })
-      .catch(err =>{
-        return Promise.reject(err.response.data.error.message);
-      })
+    axios.get(`/api/books/${bookId}`)
+      .then(res => res.data)
+      .then(book => dispatch(fetchBookByIdSuccess(book)))
+
   }
 }
 
