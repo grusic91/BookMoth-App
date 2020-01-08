@@ -11,6 +11,8 @@ import BookDetail from "./books-containers/book-detail/BookDetail";
 import BookUpdate from "./books-containers/book-detail/BookUpdate";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
+import EmailConfirmation from "./auth/EmailConfirmation";
+
 
 import { ProtectedRoute } from "./shared/authRoutes/ProtectedRoute";
 import { LoggedInRoute } from "./shared/authRoutes/LoggedInRoute";
@@ -38,6 +40,7 @@ const Main = (props) => {
         <ProtectedRoute exact path="/books/:id/edit" component={BookUpdate}/>
         <LoggedInRoute exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/confirm/:id" component={EmailConfirmation} />
       </Switch>
     </div>
   )
