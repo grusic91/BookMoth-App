@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const config = require('../config');
+const sendVerificationEmail = require("./email.controller");
 
 // REGISTER USER
 exports.register = async function(req, res, next) {
@@ -65,18 +66,19 @@ exports.auth = async function(req, res, next) {
           return res.status(422).send({errors: [{title: "Data missing!", detail: "User does not exist!"}]});
         } else {
           // User exist so, go and asign it a token
-          let { id, username, profileImageUrl } = user;
+          let { id, username, profileImageUrl, confirmed } = user;
 
           let isMatch = await user.comparePassword(req.body.password);
           if (isMatch) {
+            // console.log(user);
             // create token
             let token = jwt.sign({
               id,
               username,
-              profileImageUrl
+              profileImageUrl,
             }, config.SECRET_KEY, { expiresIn: '1h' });
 
-            return res.status(200).json({ token });
+            return res.status(200).json({ token, confirmed });
 
           } else {
             return next({

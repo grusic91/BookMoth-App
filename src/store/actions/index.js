@@ -119,6 +119,35 @@ export const deleteUsersBook = (bookData) => {
       );
 }
 
+// REGISTER UNVERIFIED USER AND SEND VERIFICATION EMAIL
+export const RegisterAndVerification = (userData) => {
+  //console.log(userData);
+  return axios.post(`/api/auth/send`, {...userData})
+    .then((res) => {
+      // Get back data from Server
+      return res
+    },
+    (err) => {
+      return Promise.reject(err.response.data.error.message)
+    }
+  )
+}
+
+// EMAIL CONFIRMATION ACTION
+export const checkedConfirmation = (id) => {
+
+  return axios.get(`/api/auth/confirm/${id}`, {...id})
+    .then(
+      (res) => {
+
+        return res;
+      },
+      (err) => {
+        return err;
+      }
+    )
+}
+
 // REGISTER USER
 export const register = (userData) => {
   return axios.post(`/api/auth/register`, {...userData})

@@ -29,7 +29,11 @@ const userSchema = new Schema({
   profileImageUrl: {
     type: String
   },
-  books: [{ type: Schema.Types.ObjectId, ref: "Book"}]
+  books: [{ type: Schema.Types.ObjectId, ref: "Book"}],
+  confirmed: {
+    type: Boolean,
+    default: false
+  }
 });
 
 /* pre save hook */
