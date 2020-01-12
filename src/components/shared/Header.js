@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import * as actions from "store/actions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 
 import SearchInput from "./form/SearchInput";
 
@@ -77,7 +79,10 @@ class Header extends Component {
     return (
       <nav id="header" className="navbar navbar-expand-md sticky-top .d-print navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">BOOKMOTH</Link>
+          <Link className="navbar-brand" to="/">
+            <span className="icon"><FontAwesomeIcon icon={faBook} /></span>
+            BOOKMOTH
+          </Link>
           <button
             className="navbar-toggler "
             type="button"
@@ -94,7 +99,7 @@ class Header extends Component {
                 <SearchInput hideSearch={this.hideSearch} />
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/">Home</Link>
+                <Link className="nav-link active" to="/">Home</Link> {/* in future add active class to links*/}
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/books">Books</Link>

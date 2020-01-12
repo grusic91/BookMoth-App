@@ -24,6 +24,7 @@ class AuthService {
   }
 
   getExpiration(token) {
+    debugger
     const exp = this.decode(token).exp;
     // expiration time
     return moment.unix(exp);

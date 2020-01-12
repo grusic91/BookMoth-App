@@ -1,42 +1,94 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-#navbar {
-  padding: 20px;
-  margin-bottom: 40px; }
-  #navbar .navbar-brand {
-    margin-right: 30px;
-    font-size: 27px;
+/*Styles for Header.Js Component*/
+#header {
+  margin-bottom: 40px;
+  color: #faf7f5;
+  /* faBook */ }
+  #header .navbar-brand {
+    margin-right: 3rem;
+    font-size: 2.2rem;
+    text-decoration: underline;
     letter-spacing: 1px;
-    color: #4b4b4b;
-    font-weight: 500; }
-  #navbar .nav-link:hover {
+    font-weight: 500;
+    color: #faf7f5; }
+  #header span.icon {
+    margin-right: 10px; }
+  #header .nav-link {
+    font-size: 1.24rem;
+    color: #faf7f5; }
+  #header .nav-link:hover {
     color: #eb6e34;
-    font-weight: bold;
-    border: 1px solid #4b4b4b;
-    border-radius: 2px; }
-  #navbar .show {
-    background-color: white; }
+    font-weight: bold; }
+  #header .navbar-brand:hover {
+    color: #eb6e34; }
+
+/*On small devices*/
+@media (max-width: 575.98px) {
+  #header {
+    padding: 15px;
+    margin-bottom: 40px; }
+    #header .navbar-brand {
+      margin-right: 10px;
+      font-size: 1.5rem; } }
 
 /*Homepage Component*/
 .homepage {
   padding: 4rem;
-  font-family: Roboto; }
+  font-family: Roboto;
+  margin: auto;
+  position: relative; }
   .homepage .home-content {
     color: #07192b;
-    text-shadow: 0 0 8px #c1b2aa;
-    margin: 0 auto;
-    text-align: left;
-    background-color: transparent; }
+    padding: 3rem;
+    align-self: center;
+    justify-content: center;
+    text-shadow: 0 0 8px #faf7f5;
+    text-align: center;
+    z-index: -1;
+    max-width: 600px;
+    margin: auto;
+    /* btn ripple effect */ }
+    .homepage .home-content h1 {
+      font-weight: bold; }
+    .homepage .home-content .btn-ripple {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      transition: all ease-in-out .5s; }
+    .homepage .home-content .btn-outline-dark {
+      color: #07192b;
+      border-color: #07192b; }
+    .homepage .home-content .btn-outline-dark:hover {
+      color: #faf7f5;
+      background-color: #07192b; }
 
 .homepage-text {
+  margin-top: 20px;
   font-size: 1.25rem; }
 
 /*Display for mobile device*/
 @media (max-width: 576px) {
-  .display-6 {
-    font-size: 2rem; }
-  .homepage-text {
-    font-size: 1rem; } }
+  .homepage {
+    padding-left: 0;
+    padding-right: 0;
+    font-family: Roboto;
+    margin: auto; }
+    .homepage .home-content {
+      padding: 1.5rem;
+      text-align: center;
+      z-index: -1;
+      background-color: transparent;
+      max-width: 600px;
+      margin: auto; }
+      .homepage .home-content h1 {
+        font-size: 2rem;
+        color: #07192b;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+        text-transform: uppercase; }
+      .homepage .home-content .homepage-text {
+        font-size: .9rem; } }
 
 /*Login Component*/
 #login-page {
@@ -231,7 +283,6 @@ body {
   margin: 0; }
 
 #main-page {
-  width: 100vw;
   width: 100vw;
   height: 100vh;
   position: absolute;

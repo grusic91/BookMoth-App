@@ -1,23 +1,45 @@
-#navbar {
-  padding: 20px;
+/*Styles for Header.Js Component*/
+#header {
   margin-bottom: 40px;
+  color: $navbar-text-color;
 
   .navbar-brand {
-    margin-right: 30px;
-    font-size: 27px;
+    margin-right: 3rem;
+    font-size: 2.2rem;
+    text-decoration: underline;
     letter-spacing: 1px;
-    color: $main-text-color;
     font-weight: 500;
+    color: $navbar-text-color;
+  }
+  /* faBook */
+  span.icon {
+    margin-right: 10px;
+  }
+
+  .nav-link {
+    font-size: 1.24rem;
+    color: $navbar-text-color;
   }
 
   .nav-link:hover {
-    color: $main-background;
+    color: $nav-link-hover-color;
     font-weight: bold;
-    border: 1px solid $main-text-color;
-    border-radius: 2px;
   }
 
-  .show {
-    background-color: white;
+  .navbar-brand:hover {
+    color: $nav-link-hover-color;
+  }
+}
+
+/*On small devices*/
+@media (max-width: 575.98px) {
+  #header {
+    padding: 15px;
+    margin-bottom: 40px;
+
+    .navbar-brand {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
   }
 }
