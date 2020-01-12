@@ -15,7 +15,7 @@ const Homepage = () => {
       </Link>
       <p className="homepage-text">
         <strong> BookMoth</strong> is <strong>Free Web Application</strong> page,
-        where you can store data of your physical books and have list of them
+        where you can store data of your books and have list of them
         <strong> always at hand.</strong>
       </p>
 
