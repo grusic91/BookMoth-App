@@ -21,6 +21,7 @@ This is the list of technologies that I use in project:
 * **AWS S3** - uploading images in bucket
 * **bootstrap** - styles
 * **SCSS** - styles
+* **nodemailer** - sends confirmation email when users registration account completed
 * **heroku** - hosting application.
 
 ___
@@ -49,11 +50,16 @@ ___
 If you want to use and manipulate with data from MongoDB, you should create your own Atlas MongoDB account and AWS account, and porivde credentials in folder: `server/config/`, where you need to create folder `dev.js` and provide credentials there like:
 
 ```
+If you want to use the application you also need to create this environment variables
+
 module.exports = {
   DB_URI: "your mongo db uri from Atlas",
   SECRET_KEY: "your secret key from atlas",
   AWS_ACCESS_KEY_ID: "your access keyId from AWS",
-  AWS_SECRET_KEY: "your secret key from AWS"
+  AWS_SECRET_KEY: "your secret key from AWS",
+  MAIL_USER: email from where registerd users get confirmation email,
+  MAIL_PASSWORD: mails password,
+  CLIENT_ORIGIN: aplication base url,
 }
 ```
 ---

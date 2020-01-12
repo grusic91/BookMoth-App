@@ -4,32 +4,21 @@ import { Link } from "react-router-dom";
 const Homepage = () => {
   return (
   <div className="homepage container-fluid">
-    <div className="home-content row jumbotron">
-      <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-        <h1 className="display-6">BookMoth page (!Still in progress!)</h1>
-        <p className="lead">Register now and start making your own Library.</p>
-      </div>
-      <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-        <Link to="/register">
-          <button type="button"  className="btn btn-outline-secondary btn-lg">
-            Registration page
-          </button>
-        </Link>
-      </div>
-      <div className="container-fluid">
-        <div className="text-left">
-          <hr className="my-4"/>
-          <div className="col-12">
-            <p className="homepage-text">
-              Everyone has at home a lot of books.
-              <strong> BookMoth</strong> is <strong>Free Web Application</strong> page,
-              where you can store data of your physical books collection. It is like database for your home phisical
-              Library! By using this application you will have a list of your books
-              <strong> always at hand.</strong>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="home-content">
+      <h1 className="display-6">BookMoth App</h1>
+      <small style={{color:"red", fontWeight: "bold"}}>...STILL DEVELOPING...</small>
+      <p>Make your own data Book Collection.</p>
+      <Link to="/books">
+        <button type="button" className="btn btn-outline-dark btn-lg">
+          Books are Here
+        </button>
+      </Link>
+      <p className="homepage-text">
+        <strong> BookMoth</strong> is <strong>Free Web Application</strong> page,
+        where you can store data of your physical books and have list of them
+        <strong> always at hand.</strong>
+      </p>
+
     </div>
   </div>
   )

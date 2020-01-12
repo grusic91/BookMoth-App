@@ -42,6 +42,7 @@ const Main = (props) => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/confirm/:id" component={EmailConfirmation} />
       </Switch>
+      {/*Photo by Martin Adams on Unsplash*/}
     </div>
   )
 }

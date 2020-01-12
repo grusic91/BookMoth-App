@@ -2,27 +2,74 @@
 .homepage {
   padding: 4rem;
   font-family: $main-font-family;
+  margin: auto;
+  position: relative;
 
   .home-content {
+    h1 {
+      font-weight: bold;
+    }
     color: $main-homepage-color;
-    text-shadow: 0 0 8px #c1b2aa;
-    margin: 0 auto;
-    text-align: left;
-    background-color: transparent;
+    padding: 3rem;
+    align-self: center;
+    justify-content: center;
+    text-shadow: 0 0 8px $navbar-text-color;
+    text-align: center;
+    z-index: -1;
+    max-width: 600px;
+    margin: auto;
+
+  /* btn ripple effect */
+    .btn-ripple {
+    	display: inline-block;
+    	position: relative;
+    	overflow: hidden;
+    	transition: all ease-in-out .5s;
+    }
+
+    .btn-outline-dark {
+      color: $main-homepage-color;
+      border-color: $main-homepage-color;
+    }
+    .btn-outline-dark:hover {
+      color: $navbar-text-color;
+      background-color: $main-homepage-color;
+    }
+
   }
 }
 
 .homepage-text {
+  margin-top: 20px;
   font-size: 1.25rem;
 }
 
 /*Display for mobile device*/
 @media (max-width: 576px) {
-  .display-6 {
-    font-size: 2rem;
-  }
+  .homepage {
+    padding-left: 0;
+    padding-right: 0;
+    font-family: $main-font-family;
+    margin: auto;
 
-  .homepage-text {
-    font-size: 1rem;
+    .home-content {
+      padding: 1.5rem;
+      text-align: center;
+      z-index: -1;
+      background-color: transparent;
+      max-width: 600px;
+      margin: auto;
+
+      h1 {
+        font-size: 2rem;
+        color: $main-homepage-color;
+        text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .homepage-text {
+        font-size: .9rem;
+      }
+    }
   }
 }
