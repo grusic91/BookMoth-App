@@ -1,11 +1,12 @@
 const express = require('express');
+const graphqlHTTP = require('express-graphql');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // don't need body-parser
 
+const schema = require('./schema'); // gql schema
 const config = require('./config');
 const FakeDb = require('./fake-db');
 const errorHandler = require('./handler/error');
-const Book = require('./models/book');
 
 const authRoutes = require('./routes/auth');
 const booksRoutes = require('./routes/books');
@@ -32,7 +33,23 @@ mongoose.connect(config.DB_URI, {
     }
   });
 
+  // check if I am connected to DB
+
+  mongoose.connection.once('open', () => {
+    console.log('Connected to database');
+    
+  })
+
 const app = express();
+
+// Setup middleware for using graphql
+
+app.use(
+  '/graphql', 
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+}))
 
 app.use(bodyParser.json());
 

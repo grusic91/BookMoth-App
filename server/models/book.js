@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Boook Schema - for Book Collection in MongoDB
 const bookSchema = new Schema({
   title:  { type: String,
             lowercase: true,
             required: true, max: [200, "Too long, max is 200 characters"]},
-  author: { type: String,
-            required: true, max: [128, "Too long, max is 128 characters"]},
+  authorId: { type: String },
   language: { type: String },
   edition: { type: String},
   publisher: { type: String },
@@ -19,4 +19,7 @@ const bookSchema = new Schema({
   users: [{ type: Schema.Types.ObjectId, ref: "User"}]
 });
 
+/**
+ * In MongoDB database we have collection Book, which look like bookSchema
+ */
 module.exports = mongoose.model("Book", bookSchema);
