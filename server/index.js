@@ -1,10 +1,6 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-<<<<<<< HEAD
-=======
-const schema = require('./gql-api/schema');
 
->>>>>>> feature/set-graphql
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser'); // don't need body-parser
 
@@ -38,19 +34,12 @@ mongoose.connect(config.DB_URI, {
     }
   });
 
-<<<<<<< HEAD
-  // check if I am connected to DB
 
-  mongoose.connection.once('open', () => {
-    console.log('Connected to database');
-    
-  })
-=======
   // Check if application is connected to Mongo DB
   mongoose.connection.once('open', () => {
     console.log('connected to DB');
   });
->>>>>>> feature/set-graphql
+
 
 const app = express();
 

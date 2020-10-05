@@ -6,12 +6,8 @@ const bookSchema = new Schema({
   name:  { type: String,
             lowercase: true,
             required: true, max: [200, "Too long, max is 200 characters"]},
-<<<<<<< HEAD
-  authorId: { type: String },
-=======
   authorId: {type: String},
   genre: {type: String},
->>>>>>> feature/set-graphql
   language: { type: String },
   edition: { type: String},
   publisher: { type: String },
