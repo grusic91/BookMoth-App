@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import * as actions from "store/actions";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
 
 import SearchInput from "./form/SearchInput";
 
@@ -43,10 +41,10 @@ class Header extends Component {
       return (
         <React.Fragment>
           <li className="nav-item">
-            <Link className="nav-link" to="/register">REGISTER</Link>
+            <Link className="nav-link auth-btn" to="/register">register</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/login">LOGIN</Link>
+            <Link className="nav-link auth-btn" to="/login">login</Link>
           </li>
         </React.Fragment>
       )
@@ -77,11 +75,10 @@ class Header extends Component {
     const {isAuth} = this.props.auth;
 
     return (
-      <nav id="header" className="navbar navbar-expand-md sticky-top .d-print navbar-dark bg-dark">
+      <nav id="header" className="navbar navbar-expand-md sticky-top navbar-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <span className="icon"><FontAwesomeIcon icon={faBook} /></span>
-            BOOKMOTH
+            <small>BOOK</small><strong>M<small>OTH</small></strong>
           </Link>
           <button
             className="navbar-toggler "
