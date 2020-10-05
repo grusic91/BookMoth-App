@@ -1,11 +1,13 @@
 const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const schema = require('./gql-api/schema');
+
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const config = require('./config');
 const FakeDb = require('./fake-db');
 const errorHandler = require('./handler/error');
-const Book = require('./models/book');
 
 const authRoutes = require('./routes/auth');
 const booksRoutes = require('./routes/books');
@@ -27,9 +29,14 @@ mongoose.connect(config.DB_URI, {
 })
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
-      fakeDb = new FakeDb();
+      let fakeDb = new FakeDb();
        //fakeDb.seedDb()
     }
+  });
+
+  // Check if application is connected to Mongo DB
+  mongoose.connection.once('open', () => {
+    console.log('connected to DB');
   });
 
 const app = express();
@@ -40,6 +47,12 @@ app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 app.use("/api", booksRoutes);
 app.use("/api", imageUploadRoutes);
+
+// set graphql api request
+app.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true
+}));
 
 if (process.env.NODE_ENV === 'production') {
   const appPath = path.join(__dirname, '..', 'build')
