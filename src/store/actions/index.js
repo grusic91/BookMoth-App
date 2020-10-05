@@ -63,7 +63,6 @@ export const fetchBooks = (title) => {
     // frist reset data with fetchBooksInit
     // when navigating between search page and normal books page, reset data before request
     dispatch(fetchBooksInit());
-
     axiosInstance.get(url)
       .then(res => {
           return res.data

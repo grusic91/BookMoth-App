@@ -3,14 +3,18 @@ const Schema = mongoose.Schema;
 
 // Boook Schema - for Book Collection in MongoDB
 const bookSchema = new Schema({
-  title:  { type: String,
+  name:  { type: String,
             lowercase: true,
             required: true, max: [200, "Too long, max is 200 characters"]},
+<<<<<<< HEAD
   authorId: { type: String },
+=======
+  authorId: {type: String},
+  genre: {type: String},
+>>>>>>> feature/set-graphql
   language: { type: String },
   edition: { type: String},
   publisher: { type: String },
-  category: { type: String, required: true, lowercase: true},
   pages: {type: Number },
   description: { type: String, required: true},
   cratedAt: { type: Date, default: Date.now },
