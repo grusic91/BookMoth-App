@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, withRouter} from "react-router-dom";
 
 //import components
@@ -18,33 +18,50 @@ import { ProtectedRoute } from "./shared/authRoutes/ProtectedRoute";
 import { LoggedInRoute } from "./shared/authRoutes/LoggedInRoute";
 
 const Main = (props) => {
-  return (
-    <div
-      id="main-page"
-      className="component-container"
-      style={{
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundImage: `url(${process.env.PUBLIC_URL} /img/homepage-background1.jpg)`,
-        backgroundAttachment: 'fixed',
-        zIndex: -1
-      }}
-      >
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route exact path="/books" component={BookListing}/>
-        <ProtectedRoute exact path="/books/new" component={BookCreate}/>
-        <ProtectedRoute exact path="/books/manage" component={BookManage} />
-        <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>
-        <Route exact path="/books/:id" component={BookDetail}/>
-        <ProtectedRoute exact path="/books/:id/edit" component={BookUpdate}/>
-        <LoggedInRoute exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/confirm/:id" component={EmailConfirmation} />
-      </Switch>
-      {/*Photo by Martin Adams on Unsplash*/}
-    </div>
-  )
+  const [imgUrl, setImgUrl] = useState('');
+
+  useEffect(() => {
+    setImgUrl(`url(${process.env.PUBLIC_URL} /img/ergita-sela-xRHaJgNlFGc-unsplash.jpg)`)
+  }, [imgUrl])
+  console.log(imgUrl)
+
+  if (imgUrl) {
+    return (
+      <div
+        id="main-page"
+        className="component-container"
+        style={{
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundImage: imgUrl,
+          backgroundAttachment: 'fixed',
+          zIndex: -1,
+        }}
+        >
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/books" component={BookListing}/>
+          <ProtectedRoute exact path="/books/new" component={BookCreate}/>
+          <ProtectedRoute exact path="/books/manage" component={BookManage} />
+          <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>
+          <Route exact path="/books/:id" component={BookDetail}/>
+          <ProtectedRoute exact path="/books/:id/edit" component={BookUpdate}/>
+          <LoggedInRoute exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/confirm/:id" component={EmailConfirmation} />
+        </Switch>
+        {/*
+          Photo by  Ergita Sela on Unsplash
+          <span>
+            Photo by 
+            <a href="https://unsplash.com/@gitsela?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ergita Sela</a> on <a href="https://unsplash.com/s/photos/book?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>  
+        */}
+      </div>
+    )
+  } else {
+    return <div><h1>----LOADING-----</h1></div>
+  }
+ 
 }
 
 

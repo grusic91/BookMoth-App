@@ -4,24 +4,29 @@
 #header {
   margin-bottom: 40px;
   color: #faf7f5;
-  /* faBook */ }
+  font-family: 'Poppins', sans-serif; }
   #header .navbar-brand {
     margin-right: 3rem;
-    font-size: 2.2rem;
-    text-decoration: underline;
-    letter-spacing: 1px;
-    font-weight: 500;
-    color: #faf7f5; }
-  #header span.icon {
-    margin-right: 10px; }
+    font-size: 1.8rem;
+    letter-spacing: 2.5px; }
+  #header .nav-item {
+    margin-right: 3rem; }
+  #header .auth-btn {
+    border: 2px solid;
+    border-radius: 30px;
+    font-size: 1.0rem; }
   #header .nav-link {
-    font-size: 1.24rem;
-    color: #faf7f5; }
+    font-size: 1.2rem; }
   #header .nav-link:hover {
     color: #eb6e34;
     font-weight: bold; }
   #header .navbar-brand:hover {
     color: #eb6e34; }
+  #header .navbar-toggler {
+    margin-right: 20px; }
+  #header .show {
+    background-color: #070709;
+    padding-bottom: 20px; }
 
 /*On small devices*/
 @media (max-width: 575.98px) {
@@ -39,6 +44,9 @@
   margin: auto;
   position: relative; }
   .homepage .home-content {
+    background-color: silver;
+    opacity: 0.8;
+    border-radius: 8px;
     color: #07192b;
     padding: 3rem;
     align-self: center;
@@ -291,11 +299,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: -1;
   text-align: center;
-  padding: 1rem;
-  background-position: center center;
-  background-size: cover; }
+  padding: 1rem; }
 
 h1 {
   font-family: Open Sans;
