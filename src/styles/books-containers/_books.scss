@@ -1,36 +1,69 @@
-#books-listing-page {
+.books-listing-page {
   margin-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .card:hover {
-    box-shadow: -1px 9px 40px -12px $main-text-color;
-    opacity: .9;
+.cards {
+  width: 1200px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 40px;
+}
+
+.cards .my-card {
+  width: 100%;
+  margin: 0 0 20px;
+  background: #fff;
+  overflow: hidden;
+  break-inside: avoid;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  
+  h2 {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  a .card-link{
+    text-decoration: none;
+  }  
+
+  &:hover {
+    opacity: .8;
+    
+    cursor: pointer; 
+    a .card-link {
+      text-decoration: none;
+    }  
   }
 }
 
-
-@media (min-width: 576px) {
-    .card-columns {
-        column-count: 2 !important;
-    }
+@media (max-width: 1200px) {
+  .cards {
+    columns: 3;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    /* padding: 20px 20px 20px 0; */
+  }
 }
 
-@media (min-width: 768px) {
-    .card-columns {
-        column-count: 3 !important;
-    }
+@media (max-width: 768px) {
+  .cards {
+    columns: 2;
+  }
 }
 
-@media (min-width: 992px) {
-    .card-columns {
-        column-count: 4 !important;
-    }
+@media (max-width: 480px) {
+  .cards {
+    columns: 1;
+  }
 }
 
-@media (min-width: 1200px) {
-    .card-columns {
-        column-count: 5 !important;
-    }
-}
 
 .book-publish-prod {
   color: green;
@@ -39,8 +72,7 @@
 
 #book-manage-page {
   margin-top: 50px;
-  .card {
+  .my-card {
     margin-bottom: 20px;
   }
-
 }

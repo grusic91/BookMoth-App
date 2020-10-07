@@ -21,9 +21,8 @@ const Main = (props) => {
   const [imgUrl, setImgUrl] = useState('');
 
   useEffect(() => {
-    setImgUrl(`url(${process.env.PUBLIC_URL} /img/ergita-sela-xRHaJgNlFGc-unsplash.jpg)`)
-  }, [imgUrl])
-  console.log(imgUrl)
+    setImgUrl(`url(${process.env.PUBLIC_URL} /img/quinten-de-graaf-jpHAQk3KSAM-unsplash.jpg)`)
+  }, [imgUrl]);
 
   if (imgUrl) {
     return (
@@ -58,11 +57,10 @@ const Main = (props) => {
         */}
       </div>
     )
-  } else {
-    return <div><h1>----LOADING-----</h1></div>
   }
- 
+  return <div>
+    <h1>----LOADING-----</h1>
+  </div> 
 }
-
 
 export default withRouter(Main);
