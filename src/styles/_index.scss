@@ -1,6 +1,6 @@
 @import "variables.scss";
-@import 'header/header.scss';
-@import 'homepage/homepage.scss';
+@import 'header.scss';
+@import 'homepage.scss';
 @import 'auth/login.scss';
 @import 'auth/register.scss';
 @import 'books-containers/books.scss';
@@ -10,6 +10,11 @@
 @import 'books-containers/_book-search-list.scss';
 @import 'form/forms.scss';
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 body {
   margin: 0;

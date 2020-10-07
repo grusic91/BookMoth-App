@@ -12,9 +12,10 @@ class BookListing extends React.Component {
 
   render() {
     return (
-      <div id="books-listing-page" className="container">
-        <h2>All Books Here</h2>
-        <BookList books={this.props.books} />
+      <div className="books-listing-page">
+        {
+          this.props.books ? <BookList books={this.props.books} /> : <h2>No books in DB :(</h2>
+        }        
       </div>
     )
   }
