@@ -20,35 +20,9 @@ body {
   margin: 0;
 }
 
-#main-page {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-}
-
 h1 {
   font-family: $main-title-font-family;
   font-weight: bold;
-}
-
-.component-container {
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  font-family: Roboto;
-  overflow: auto;
-  height: -webkit-fill-available;
 }
 
 .card>.card-body>.card-title {
@@ -56,16 +30,4 @@ h1 {
   color: $main-homepage-color;
   font-family: $main-title-font-family;
   font-weight: bold;
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .component-container {
-    padding: 0rem;
-  }
 }

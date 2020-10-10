@@ -191,7 +191,6 @@ export const login = (userData) => {
       return res.data;
     })
     .then(res => {
-
       let token = res.token;
       // save token to localStorage
       // this will be saved in the browser in localStorage

@@ -75,7 +75,7 @@ class Header extends Component {
     const {isAuth} = this.props.auth;
 
     return (
-      <nav id="header" className="navbar navbar-expand-md sticky-top navbar-dark">
+      <nav id="header" className="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <small>BOOK</small><strong>M<small>OTH</small></strong>
