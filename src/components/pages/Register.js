@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterForm from "./RegisterForm";
+import RegisterForm from "../auth/RegisterForm";
 import * as actions from "store/actions";
 import { Redirect } from "react-router-dom";
 
