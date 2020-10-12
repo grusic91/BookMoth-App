@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { configureStore } from 'store';
-import * as actions from "store/actions";
+import * as actions from 'store/actions';
 
 // components
 import Header from 'components/shared/Header';
@@ -11,6 +11,7 @@ import Routes from './Routes';
 
 import './App.css';
 
+/* Init store. Provided from redux */
 const store = configureStore();
 
 const App = () => {
