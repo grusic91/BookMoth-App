@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Homepage from "components/pages/Homepage";
 import Register from "components/pages/Register";
 import Login from "components/pages/Login";
-import BookListing from "components/books-containers/books-page/BookListing";
+import BookListingPage from "components/pages/BookListingPage";
 import BookCreate from "components/books-containers/book-create/BookCreate";
 import BookManage from "components/books-containers/manage/BookManage";
 import BookSearchListing from "components/books-containers/BookSearchListing";
@@ -17,7 +17,7 @@ import { LoggedInRoute } from "components/shared/authRoutes/LoggedInRoute";
 
 const Routes = () => <Switch>
     <Route exact path="/" component={Homepage} />
-    <Route exact path="/books" component={BookListing}/>
+    <Route exact path="/books" component={BookListingPage}/>
     <ProtectedRoute exact path="/books/new" component={BookCreate}/>
     <ProtectedRoute exact path="/books/manage" component={BookManage} />
     <ProtectedRoute exact path="/books/:title/books" component={BookSearchListing}/>

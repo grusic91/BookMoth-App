@@ -1,4 +1,4 @@
-/* redux store */
+/* CONFIGURE REDUX STORE */
 import rootReucer from "./reducers";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";

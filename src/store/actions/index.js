@@ -1,17 +1,7 @@
 import axios from 'axios';
 import authService from '../services/auth-service';
 import axiosService from '../services/axios-service';
-import { FETCH_BOOKS_SUCCESS,
-         LOGIN_SUCCESS,
-         LOGIN_FAILURE,
-         LOGOUT,
-         FETCH_BOOKS_INIT,
-         FETCH_BOOKS_FAIL,
-         FETCH_BOOK_BY_ID_SUCCESS,
-         FETCH_BOOK_BY_ID_INIT,
-         UPDATE_BOOK_SUCCESS,
-         UPDATE_BOOK_FAIL,
-         RESET_BOOK_ERRORS } from '../actionTypes';
+import * as actionTypes from '../actionTypes';
 
 const axiosInstance = axiosService.getInstance();
 
@@ -22,7 +12,7 @@ export const varifyBookOwner = (bookId) => {
 // Action Creator FETCH_BOOKS from server
 const fetchBooksSuccess = books => {
   return {
-    type: FETCH_BOOKS_SUCCESS,
+    type: actionTypes.FETCH_BOOKS_SUCCESS,
     books
   }
 }
@@ -30,26 +20,26 @@ const fetchBooksSuccess = books => {
 const fetchBooksInit = () => {
   // reset our data to empty arrays
   return {
-    type: FETCH_BOOKS_INIT,
+    type: actionTypes.FETCH_BOOKS_INIT,
   }
 }
 
 const fetchBooksFail = (errors) => {
   return {
-    type: FETCH_BOOKS_FAIL,
+    type: actionTypes.FETCH_BOOKS_FAIL,
     errors
   }
 }
 
 const fetchBookByIdInit = () => {
   return {
-    type:   FETCH_BOOK_BY_ID_INIT
+    type:   actionTypes.FETCH_BOOK_BY_ID_INIT
   }
 }
 
 const fetchBookByIdSuccess = (book) => {
   return {
-    type: FETCH_BOOK_BY_ID_SUCCESS,
+    type: actionTypes.FETCH_BOOK_BY_ID_SUCCESS,
     book
   }
 }
@@ -164,14 +154,14 @@ export const register = (userData) => {
 const loginSuccess = () => {
   const username = authService.getUsername();
   return {
-    type: LOGIN_SUCCESS,
+    type: actionTypes.LOGIN_SUCCESS,
     username
   }
 }
 
 const loginFailure = (errors) => {
   return {
-    type: LOGIN_FAILURE,
+    type: actionTypes.LOGIN_FAILURE,
     errors
   }
 }
@@ -206,28 +196,28 @@ export const login = (userData) => {
 export const logout = () => {
   authService.invalidateUser();
   return {
-    type: LOGOUT
+    type: actionTypes.LOGOUT
   }
 }
 
 // UPDATE BOOKS
 const updateBookSuccess = (updatedBook) => {
   return {
-    type: UPDATE_BOOK_SUCCESS,
+    type: actionTypes.UPDATE_BOOK_SUCCESS,
     book: updatedBook
   }
 }
 
 const updateBookFail = (errors) => {
   return {
-    type: UPDATE_BOOK_FAIL,
+    type: actionTypes.UPDATE_BOOK_FAIL,
     errors
   }
 }
 
 export const resetUpdateBookErrors = () => {
   return {
-    type: RESET_BOOK_ERRORS
+    type: actionTypes.RESET_BOOK_ERRORS
   }
 }
 
