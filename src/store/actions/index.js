@@ -31,19 +31,6 @@ const fetchBooksFail = (errors) => {
   }
 }
 
-const fetchBookByIdInit = () => {
-  return {
-    type:   actionTypes.FETCH_BOOK_BY_ID_INIT
-  }
-}
-
-const fetchBookByIdSuccess = (book) => {
-  return {
-    type: actionTypes.FETCH_BOOK_BY_ID_SUCCESS,
-    book
-  }
-}
-
 /*FETCH BOOKS*/
 export const fetchBooks = (title) => {
   // create url and check for title if title is use url with title elese for all boooks
@@ -51,31 +38,31 @@ export const fetchBooks = (title) => {
 // dispatch function send data to the store
   return dispatch => {
     // frist reset data with fetchBooksInit
-    // when navigating between search page and normal books page, reset data before request
+    // resets data before requestreset, when navigating between searching and books page
     dispatch(fetchBooksInit());
     axiosInstance.get(url)
       .then(res => {
           return res.data
       })
-      .then(booksNoAuth => dispatch(fetchBooksSuccess(booksNoAuth)))
+      .then(booksNoAuth => {
+        dispatch(fetchBooksSuccess(booksNoAuth))})
       .catch(({response}) => {
         return dispatch(fetchBooksFail(response.data.errors))
       })
   }
 }
 
-/* GET BOOK BY ID*/
-export const fetchBookById = (bookId) => {
-  /*bookId get from URL set in BookDetail*/
-  // GET book from DB finded by ID
-  return function(dispatch) {
-    dispatch(fetchBookByIdInit());
-
-    axios.get(`/api/books/${bookId}`)
-      .then(res => res.data)
-      .then(book => dispatch(fetchBookByIdSuccess(book)))
-
-  }
+/**
+ * FETCH BOOK BY ID
+ * bookId is from BookDetail
+ */
+export const fetchBookById = bookId => async dispatch => {
+    await dispatch({type: 'IS_FETCHING_BOOK'});
+    const res = await axios.get(`/api/books/${bookId}`)
+    dispatch({
+      type: actionTypes.FETCH_BOOK_BY_ID_SUCCESS,
+      book: res.data
+    });
 }
 
 /* Create New Book*/
