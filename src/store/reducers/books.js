@@ -10,15 +10,15 @@ const books = {
     errors: []
 }
 
-export const bookReducer = (state = books, action) => {
+export const booksReducer = (state = books, action) => {
     switch (action.type) {
         case FETCH_BOOKS_INIT:
-            return { ...state, data: [], errors: [] }
+            return { ...state }
         case FETCH_BOOKS_SUCCESS:
             return {...state, data: action.books}
         case FETCH_BOOKS_FAIL:
             return { ...state, errors: action.errors, data: []}
         default:
-            return state;
+            return {...state};
     }
 }
