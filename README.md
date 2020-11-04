@@ -1,5 +1,5 @@
 # BookMoth-App
-BookMoth-App is web app made with **JavaScript, React, Redux, MongoDb, Node.js**. Project was bootstrapped with Create React App. Registered users can upload datas of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection. [Open app](https://bookmoth-react.herokuapp.com/)
+BookMoth-App is web app made with **JavaScript, React, Redux, MongoDb, Node.js**. Project was bootstrapped with Create React App. Registered users can upload data of physical books that they possess, modify, delete and update its data. Simplified: users create their own personal library and as that keep track of their books collection. [Open app](https://bookmoth-react.herokuapp.com/)
 
 ___
 
