@@ -1,53 +1,38 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { InputField } from '../shared/form/InputField';
-import { required, minLength4, email} from '../shared/form/validators';
-import { ResErrors} from '../shared/form/ResErrors';
+import { useForm } from 'react-hook-form';
+import FormError from './FormError';
+// eslint-disable-next-line
+const EMAIL_VALIDATION = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
-const LoginForm = props => {
-  const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
-
-  const renderError = (errors) => {
-    if (errors !== [] && 'error' in errors) {
-      return <ResErrors errors={errors} />
-    }
-    if ('errors' in errors) {
-      return <ResErrors errors={errors} />
-    }
-  }
-
-  return (
-    <form id="login-form" onSubmit={handleSubmit(submitCb)}>
-      <Field
-        className="form-control"
-        name="email"
-        component={InputField}
-        label="Email"
-        type="email"
-        validate={[required, minLength4, email]}
-      />
-      <Field
-        className="form-control"
-        name="password"
-        component={InputField}
-        label="Password"
-        type="password"
-        valdiate={[required]}
-      />
-    <button className="form-success btn btn-success fomr-control"
-          type="submit"
-          disabled={!valid || pristine || submitting}>
-        Login
-      </button>
-      {
-       renderError(errors)
-      }
+const LoginForm = ({onSubmit}) => { 
+    const { register, handleSubmit, errors } = useForm();
+    
+    return <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="email">Email:</label>
+        <input
+            className="form-control"
+            name="email"             
+            label="Email"
+            type="email"
+            ref={register({
+                required: 'Email is required!', 
+                pattern: {value: EMAIL_VALIDATION, message: 'Invalid email pattern!'}})}
+        />
+        <FormError errors={errors} name="email">{ (message) => <p>{message}</p> }</FormError>
+        <label htmlFor="password">Password:</label>
+        <input
+            className="form-control"
+            name="password"      
+            type="password"
+            ref={register({
+                required: "Password is required!", 
+                minLength: {value: 8, message: 'Minimum length of password is 8 characters!'}})} 
+        />
+        <FormError errors={errors} name="password">{(message) => <p>{message}</p>}</FormError>        
+        <button className="form-success btn btn-success fomr-control" type="submit">
+            Login
+        </button>
     </form>
-  )
 }
 
-export default reduxForm({
-  form: 'loginForm', // a unique identifier for this form
-
-})(LoginForm);
+export default LoginForm;

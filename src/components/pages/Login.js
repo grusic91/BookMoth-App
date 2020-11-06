@@ -1,34 +1,18 @@
 import React from "react";
 import LoginForm from "../auth/LoginForm";
-import * as actions from "store/actions";
-import { Redirect } from "react-router-dom";
-import { connect } from "react-redux";
 
-class Login extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.loginUser = this.loginUser.bind(this);
+function Login (props) {
+  
+  const loginUser = (formData) => {
+    alert(JSON.stringify(formData));
+    //this.props.dispatch(actions.login(formData));
   }
 
-  loginUser (userData) {
-    this.props.dispatch(actions.login(userData));
-  }
-
-  render () {
-    const { isAuth, errors } = this.props.auth;
-    const { successRegister } = this.props.location.state || false;
-
-    if(isAuth) {
-      return <Redirect to={{pathname: '/books'}} />
-    }
-
-    return(
-      <div className="container" id="login-page">
-        { successRegister &&
+    return <div className="container" id="login-page">
+        {/*  successRegister &&
             <div id="success-alert" className="alert alert-success">
                 <p>You have been successfuly registerd, please login now.</p>
-            </div>
+            </div> */
         }
         <div className="row">
           <div className="col-md-2"></div>
@@ -36,7 +20,7 @@ class Login extends React.Component {
             <div className="row form-box">
               <div className="col-md-6">
                 <div className="form-title">Login Form - Sign in</div>
-                <LoginForm submitCb={this.loginUser} errors={errors} />
+                <LoginForm onSubmit={loginUser} />
               </div>
               <div
                 className="form-img col-md-6"
@@ -53,15 +37,7 @@ class Login extends React.Component {
             </div>
           </div>
         </div>
-      </div>
-    )
-  }
+    </div>    
 }
 
-function mapStateToPorps(state) {
-  return {
-    auth: state.auth
-  }
-}
-
-export default connect(mapStateToPorps)(Login);
+export default Login;

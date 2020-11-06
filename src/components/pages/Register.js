@@ -1,24 +1,10 @@
 import React from "react";
 import RegisterForm from "../auth/RegisterForm";
 import * as actions from "store/actions";
-import { Redirect } from "react-router-dom";
 
-class Register extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      errors: {},
-      redirect: false,
-      sendingEmail: false,
-      isConfirmed: false
-    }
-    this.registerUser = this.registerUser.bind(this);
-  }
-
-
+const Register = () => {  
 // on submit registration form
-  registerUser(userData) {
+  const registerUser = (userData) => {
     // fire fregistration function which start sending email to the user
     this.setState({ sendingEmail: true});
     actions.RegisterAndVerification(userData)
@@ -49,29 +35,14 @@ class Register extends React.Component {
       )
   }
 
-  render () {
-    const { errors, redirect, sendingEmail } = this.state;
-      if(redirect) {
-      return <Redirect to={{pathname: '/login', state: { successRegister: true }}} />
-    }
-
-    return(
-      <div id="register-page" className="container">
+    return <div id="register-page" className="container">
         <div className="row">
           <div className="col-md-2"></div>
           <div className="col-lg-8">
             <div className="row form-box">
               <div className="col-md-6">
                 <div className="form-title">Registration Form - Sign up</div>
-
-                {
-                  sendingEmail && <h1>SENDING VERIFICATION EMAIL!</h1>
-
-                }
-                {
-                  !sendingEmail && <RegisterForm submitCb={this.registerUser} errors={errors} />
-                }
-
+                <RegisterForm onSubmit={registerUser} />
               </div>
               <div
                 className="form-img col-md-6"
@@ -88,9 +59,8 @@ class Register extends React.Component {
             </div>
           </div>
         </div>
-      </div>
-    )
-  }
+    </div>
 }
+
 
 export default Register;
