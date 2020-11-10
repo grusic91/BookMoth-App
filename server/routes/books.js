@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { authMiddleware } = require('../controllers/auth');
+const { authMiddleware } = require('../controllers/authMiddleware');
 const Book = require('../models/book');
 const User = require('../models/user');
 
 /*Get books that belong to my account*/
-router.get("/books/manage", authMiddleware, async function(req,res,next) {
+router.get("/books/manage", authMiddleware, async function(req, res, next) {
   try {
     const user = res.locals.user;
     let books = await Book.where({users: user})

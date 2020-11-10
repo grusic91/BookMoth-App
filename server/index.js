@@ -1,15 +1,13 @@
 const express = require('express');
-const graphqlHTTP = require('express-graphql');
-
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser'); // don't need body-parser
+const bodyParser = require('body-parser'); 
 
-const schema = require('./schema'); // gql schema
 const config = require('./config');
 const FakeDb = require('./fake-db');
 const errorHandler = require('./handler/error');
+const { mongoErrorHandler } = require('./middlewares/mongoErrors');
 
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/users');
 const booksRoutes = require('./routes/books');
 const imageUploadRoutes = require('./routes/image-upload');
 
@@ -30,40 +28,25 @@ mongoose.connect(config.DB_URI, {
   .then(() => {
     if (process.env.NODE_ENV !== 'production') {
       let fakeDb = new FakeDb();
-       //fakeDb.seedDb()
+       fakeDb.seedDb();
     }
   });
-
 
   // Check if application is connected to Mongo DB
   mongoose.connection.once('open', () => {
     console.log('connected to DB');
   });
 
-
 const app = express();
 
-// Setup middleware for using graphql
-
-app.use(
-  '/graphql', 
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-}))
-
+// middlewares
 app.use(bodyParser.json());
+app.use(mongoErrorHandler);
 
 // Routes come here
-app.use("/api/auth", authRoutes);
+app.use("/api/users", authRoutes);
 app.use("/api", booksRoutes);
 app.use("/api", imageUploadRoutes);
-
-// set graphql api request
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true
-}));
 
 if (process.env.NODE_ENV === 'production') {
   const appPath = path.join(__dirname, '..', 'build')

@@ -12,13 +12,13 @@ function BookDetail(props) {
 
     const isFetching = useSelector(state => {
         return state.book.isFetching;
-    }, shallowEqual)
+    }, shallowEqual);
 
-    const error = useSelector(state => state.book.errors, shallowEqual)
+    const error = useSelector(state => state.book.errors, shallowEqual);
     const bookId = props.match.params.id;
   // equivalent react-redux hook to mapStateToProps
-    const dispatch = useDispatch();
-    useEffect(() => {        
+    const dispatch = useDispatch(); 
+    useEffect(() => {     
         dispatch(actions.fetchBookById(bookId));
     }, []);
 

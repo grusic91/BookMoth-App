@@ -11,8 +11,8 @@ class FakeDb {
   }
 
   async cleanDB() {
-    await User.remove({})
-    await Book.remove({})
+    await User.deleteMany({});
+    await Book.deleteMany({});
   }
 
   pushDataToDb() {
