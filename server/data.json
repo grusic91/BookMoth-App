@@ -1,6 +1,7 @@
 {
   "books": [{
       "title": "The Gulag Archipelago",
+      "name": "The Gulag Archipelago",
       "author": "Alexandr Solzhenitsyn",
       "language": "Englisch",
       "publisher": "Harvill Press; 01 edition (30 Jan 2003)",
@@ -10,6 +11,7 @@
     },
     {
       "title": "The Hobbit",
+      "name": "The Hobbit",
       "author": "J.R.R. Tolkien",
       "language": "Englisch",
       "publisher": "Houghton Mifflin Harcourt (September 18, 2012)",
@@ -19,6 +21,7 @@
     },
     {
       "title": "Sapiens: A Brief History of Humankind ",
+      "name": "Sapiens: A Brief History of Humankind ",
       "author": "Yuval Noah Harari",
       "language": "Englisch",
       "publisher": "Harper (10 Feb 2015)",
@@ -28,6 +31,7 @@
     },
     {
       "title": "Iliad",
+      "name": "Iliad",
       "author": "Homer",
       "language": "Englisch",
       "publisher": "Wordsworth Classics; New ed edition (September 1, 2003)",
@@ -37,6 +41,7 @@
     },
     {
       "title": "Teharje - Krvave Arene",
+      "name": "Teharje - Krvave Arene",
       "author": "Ivan Korošec",
       "language": "Slovenščina",
       "publisher": "Ilex-Impex, d.o.o. Ljubljana 1994",
@@ -48,6 +53,7 @@
     },
     {
       "title": "Ukradeno Otroštvo",
+      "name": "Ukradeno Otroštvo",
       "author": "Ivan Ott",
       "language": "Slovenščina",
       "publisher": "Založba za alternativno teorijo Maribor 1991",
@@ -59,8 +65,8 @@
   ],
   "users": [
     {
-      "username": "Testuser",
-      "email": "test@gm.com",
+      "username": "Testuser2",
+      "email": "test2@gm.com",
       "password": "testtest"
     }
   ]
